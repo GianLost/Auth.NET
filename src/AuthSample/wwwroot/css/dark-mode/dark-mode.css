@@ -1,0 +1,115 @@
+/* Estilo para o modo claro (lightmode) */
+body.lightmode {
+    background-color: #fff; /* Cor de fundo clara */
+    color: #333; /* Cor do texto no modo claro */
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+}
+
+.navbar-brand {
+    color: #000;
+}
+
+/* Estilo para o botão de alternância no modo claro */
+body.lightmode .navbar-toggler {
+    border: 0.2rem solid #333; /* Borda escura no modo claro */
+}
+
+body.lightmode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Ícone escuro */
+}
+
+/* Estilo para o botão de alternância no modo escuro */
+body.darkmode .navbar-toggler {
+    border: 0.2rem solid #fff; /* Borda branca no modo escuro */
+}
+
+body.darkmode .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Ícone branco */
+}
+
+/* Remove a sombra de foco e clique no botão navbar-toggler */
+.navbar-toggler:focus,
+.navbar-toggler:active {
+    outline: none; /* Remove a borda padrão de foco */
+    box-shadow: none; /* Remove a sombra ao clicar */
+}
+
+.nav-item a {
+    color: #000;
+}
+
+a {
+    color: #007bff; /* Cor dos links no modo claro */
+}
+
+/* Estilo para o modo escuro (darkmode) */
+body.darkmode {
+    background-color: #3c3c3c; /* Cor de fundo escuro */
+    color: #e0e0e0; /* Cor do texto no modo escuro */
+}
+
+/* Estado de modo escuro */
+body.darkmode .toggle-btn {
+    background-color: #ff98007f; /* Cor de fundo para o modo escuro */
+}
+
+body.darkmode .navbar-brand {
+    color: #cdcdcd; /* Cor dos links no modo escuro */
+}
+
+body.darkmode a {
+    color: #1e90ff; /* Cor dos links no modo escuro */
+}
+
+body.darkmode .nav-item a {
+    color: #fff; /* Cor dos links no modo escuro */
+}
+
+/* Estilos para o botão de alternância */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #333; /* Cor de fundo inicial */
+    transition: background-color 0.3s;
+}
+
+.toggle-btn .slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.toggle-btn .icon {
+    font-size: 16px;
+}
+
+.toggle-btn .circle {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+
+body.darkmode .toggle-btn .circle {
+    transform: translateX(30px); /* Move o círculo para o lado direito */
+}

@@ -2,48 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AuthSample</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Gianluca Vialli Ribeiro Vieira">
+    <meta name="description" content="Biblioteca .Net para autenticação de usuários e gerenciamento de sessão com permissionamento.">
+
+    <title>@ViewData["Title"] - Auth.NET</title>
+
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- standard css -->
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AuthSample.styles.css" asp-append-version="true" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="~/css/dark-mode/dark-mode.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login-page/login.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/users-page/register.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/navbar/navbar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/components/components.css" asp-append-version="true" />
+
 </head>
 <body>
+
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav id="menu" class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" aria-label="main-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AuthSample</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                <!-- Botão de alternância para o modo claro/escuro -->
+                <div class="theme-toggle ms-3 me-3">
+                    <button id="theme-toggle" class="toggle-btn">
+                        <div class="slider">
+                            <span class="icon sun">&#9728;</span>
+                            <span class="icon moon">&#9790;</span>
+                            <div class="circle"></div>
+                        </div>
+                    </button>
+                </div>
+
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Auth.NET</a>
+
+                <!-- Botão de alternância para o menu em dispositivos móveis -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
+                <!-- Menu colapsável -->
+                <div class="collapse navbar-collapse" id="main-navbar">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+
+
+    <main role="main" class="container-fluid main-body">
+        @RenderBody()
+    </main>
 
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - AuthSample - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
+    <!-- standard js -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- custom js -->
+    <script type="module" src="~/js/animation/toggle-password-visibility.js" asp-append-version="true"></script>
+    <script type="module" src="~/js/forms/validation/validate-form.js" asp-append-version="true"></script>
+    <script src="~/js/components/tooltip.js" asp-append-version="true"></script>
+    <script src="~/js/components/alert.js" asp-append-version="true"></script>
+    <script src="~/js/forms/form.js" asp-append-version="true"></script>
+
+    <!-- dark-mode js -->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.5/lib/darkmode-js.min.js" asp-append-version="true"></script>
+    <script src="~/js/dark-mode/dark-mode.js" asp-append-version="true"></script>
+
     @await RenderSectionAsync("Scripts", required: false)
+
 </body>
 </html>
