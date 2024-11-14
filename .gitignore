@@ -116,6 +116,6 @@ debugger/
 .env.*.local
 
 # Ignore build files for any third-party tools used (like webpack)
-dist/
+##dist/
 *.tgz
 *.gz

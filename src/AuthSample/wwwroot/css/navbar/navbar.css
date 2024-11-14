@@ -1,79 +1,79 @@
 @import url("../colors/file-colors.css");
 
-.navbar-collapse ul li a {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 2rem;
-    padding: 0%;
-    margin: 0%;
-}
-
 #main-navbar li {
     border-bottom: 2px solid var(--placeholder-style);
     margin-right: 1rem;
 }
 
-#main-navbar li a {
-    display: flex;
-    padding-left: 0.5rem;
-    flex-wrap: nowrap;
+body.lightmode #main-navbar a {
+    color: #3c3c3c;
 }
 
-#main-navbar li a i {
-    padding-right: 0.3rem;
+body.darkmode #main-navbar a {
+    color: #cdcdcd;
 }
 
-#logged-user-space {
-    width: 15rem;
-    margin: 0rem 3rem;
+body.lightmode #toggle-nav {
+    border: 0.2rem solid #3c3c3c;
 }
 
-#logged-user-space:hover {
-    cursor: pointer;
+body.darkmode #toggle-nav {
+    border: 0.2rem solid #cdcdcd;
+    color: #cdcdcd;
 }
 
-#logged-user-space span {
-    background-color: var(--bg-grey-color);
-    color: var(--light-color);
-    border: 2px solid var(--placeholder-style);
-}
-
-#logged-user-space input {
-    width: 5rem;
-    background-color: var(--light-color-c);
-    color: var(--disabled-style);
-    font-size: 0.8rem;
-    border: 2px solid var(--placeholder-style);
-}
-
-#logged-user-space {
-}
-
-#logo a {
-    max-width: 100%;
+/* Estilo padrão do botão */
+#btn-close {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    margin: 0%;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 5px;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-@media (min-width: 600px), (max-width: 1800px) {
-    #main-navbar ul:first-child {
-        margin-left: 0rem;
-    }
+/* Modo Claro */
+body.lightmode #btn-close {
+    background-color: #808080;
+    color: #fff; /* Define a cor do X */
 }
 
-@media (max-width: 600px) {
-    #logged-user-space {
-        margin: auto;
-    }
+/* Modo Escuro */
+body.darkmode #btn-close {
+    background-color: #cdcdcd;
+    color: #3c3c3c; /* Define a cor do X */
+}
 
-    #logo a {
-        justify-content: start;
-    }
+/* Ajuste do SVG */
+#btn-close svg {
+    width: 16px;
+    height: 16px;
+}
 
-    #logo span {
-        display: none;
-    }
+body.lightmode #toggle-icon {
+    width: 1.6rem;
+    color: #3c3c3c;
+}
+
+body.darkmode #toggle-icon {
+    width: 1.6rem;
+    color: #cdcdcd;
+}
+
+#offcanvasNavbar svg {
+    min-width: 2.5rem;
+}
+
+/* Estilo para o ícone no modo claro */
+body.lightmode .img-fluid {
+    fill: #000; /* Cor do ícone no modo claro */
+}
+
+/* Estilo para o ícone no modo escuro */
+body.darkmode .img-fluid {
+    fill: #cdcdcd; /* Cor do ícone no modo escuro */
 }

@@ -27,41 +27,63 @@
 <body>
 
     <header>
-        <nav id="menu" class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3" aria-label="main-navbar">
+        <nav id="main-navbar" class="navbar navbar-light border-bottom border-2 fixed-top p-2">
             <div class="container-fluid">
                 <!-- Botão de alternância para o modo claro/escuro -->
                 <div class="theme-toggle ms-3 me-3">
                     <button id="theme-toggle" class="toggle-btn">
                         <div class="slider">
-                            <span class="icon sun">&#9728;</span>
-                            <span class="icon moon">&#9790;</span>
+                            <span class="icon-sun">☀️</span>
+                            <span class="icon-moon">🌙</span>
                             <div class="circle"></div>
                         </div>
                     </button>
                 </div>
-
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Auth.NET</a>
-
-                <!-- Botão de alternância para o menu em dispositivos móveis -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand fs-5" asp-area="" asp-controller="Home" asp-action="Index">Auth.NET</a>
+                <button id="toggle-nav" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <svg id="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
                 </button>
-
-                <!-- Menu colapsável -->
-                <div class="collapse navbar-collapse" id="main-navbar">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <a href="#">
+                            <svg class="img-fluid" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 49 49" viewBox="0 0 49 49" id="laptop-security">
+                                <path d="M36.4,0.5H12.5c-0.4,8.8-10.1,8-10.1,8c-0.3,28.1,22,40,22,40s22.6-12.6,22-40C46.5,8.5,37.2,9.7,36.4,0.5z M42,21.2c0,1.9-1.5,3.4-3.4,3.4c-0.8,0-1.5-0.3-2.1-0.7c-0.4,0.7-1.1,1.1-1.9,1.1h-0.7v0.1c0,1.6-1.3,2.9-2.9,2.9h0v1.9c0.7,0.6,1.2,1.6,1.2,2.6c0,1.9-1.5,3.4-3.4,3.4c-1.2,0-2.3-0.6-2.9-1.6c-0.4,0.2-0.8,0.2-1.2,0.2c-0.5,0-1.1-0.1-1.5-0.4c-0.6,1-1.7,1.7-3,1.7c-1.9,0-3.4-1.5-3.4-3.4c0-1,0.4-1.9,1.2-2.6V28c-1.5-0.2-2.6-1.4-2.6-2.9v-0.1h-0.8c-0.8,0-1.5-0.4-1.9-1.1c-0.6,0.5-1.3,0.7-2.1,0.7c-1.9,0-3.4-1.5-3.4-3.4c0-1.1,0.5-2.1,1.3-2.7c-0.8-0.6-1.3-1.6-1.3-2.7c0-1.9,1.5-3.4,3.4-3.4c1,0,1.9,0.4,2.6,1.2h0.8c0.7,0,1.4,0.3,1.8,0.9c0.4-0.8,1.2-1.4,2.1-1.6v-1.3c0-3.8,3.1-6.9,6.9-6.9c1.8,0,3.6,0.7,4.9,2c1.3,1.3,2,3,2,4.9v1.3c0.9,0.1,1.7,0.7,2.1,1.5c0.4-0.5,1.1-0.9,1.8-0.9H36c0.6-0.7,1.6-1.2,2.6-1.2c1.9,0,3.4,1.5,3.4,3.4c0,1.1-0.5,2.1-1.3,2.7C41.4,19.1,42,20.1,42,21.2z"></path>
+                                <path d="M38.6 13.9c-.8 0-1.4.5-1.7 1.2h-1.6c-.3 0-.5.2-.6.4l-.5 1.1h-.5V18h.9c.3 0 .5-.2.6-.4l.5-1.1h1.2c.3.7.9 1.2 1.7 1.2 1 0 1.8-.8 1.8-1.9C40.4 14.8 39.6 13.9 38.6 13.9zM14.3 15.5c-.1-.2-.4-.4-.6-.4h-1.6c-.3-.7-.9-1.2-1.7-1.2-1 0-1.8.8-1.8 1.8 0 1 .8 1.9 1.8 1.9.8 0 1.4-.5 1.7-1.2h1.2l.5 1.1c.1.2.4.4.6.4h1v-1.4h-.5L14.3 15.5zM14.3 20.9c-.1-.2-.4-.4-.6-.4h-1.6c-.3-.7-.9-1.2-1.7-1.2-1 0-1.8.8-1.8 1.8 0 1 .8 1.9 1.8 1.9.8 0 1.4-.5 1.7-1.2h1.2l.5 1.1c.1.2.4.4.6.4h1V22h-.5L14.3 20.9zM20.7 30.7v-2.9h-1.4v2.9c-.7.3-1.2.9-1.2 1.7 0 1 .8 1.8 1.8 1.8 1 0 1.8-.8 1.8-1.8C21.8 31.7 21.4 31 20.7 30.7zM38.6 19.3c-.8 0-1.4.5-1.7 1.2h-1.6c-.3 0-.5.2-.6.4L34.1 22h-.5v1.4h.9c.3 0 .5-.2.6-.4l.5-1.1h1.2c.3.7.9 1.2 1.7 1.2 1 0 1.8-.8 1.8-1.9C40.4 20.2 39.6 19.3 38.6 19.3zM29.3 30.7v-2.9h-1.4v2.9c-.7.3-1.2.9-1.2 1.7 0 1 .8 1.8 1.8 1.8 1 0 1.8-.8 1.8-1.8C30.5 31.7 30 31 29.3 30.7zM25.2 29.3v-1.6h-1.4v1.6c-.7.3-1.2.9-1.2 1.7 0 1 .8 1.8 1.8 1.8 1 0 1.8-.8 1.8-1.8C26.3 30.3 25.8 29.6 25.2 29.3zM24.5 18.8c-.5 0-.9.4-.9.9 0 .5.4.9.9.9.5 0 .9-.4.9-.9C25.3 19.2 25 18.8 24.5 18.8z"></path>
+                                <path d="M30.9,14.4h-1.1v-2.8c0-1.5-0.6-2.8-1.6-3.8c-1-1-2.3-1.6-3.8-1.6c-2.9,0-5.3,2.4-5.3,5.3v2.8h-1.1c-0.7,0-1.3,0.6-1.3,1.4v9.3c0,0.7,0.6,1.3,1.3,1.3h12.8c0.7,0,1.4-0.6,1.4-1.3v-9.3C32.2,15,31.6,14.4,30.9,14.4z M25.2,21.8v1c0,0.4-0.3,0.7-0.7,0.7c-0.4,0-0.7-0.3-0.7-0.7v-1c-0.9-0.3-1.5-1.1-1.5-2.1c0-1.2,1-2.2,2.2-2.2c1.2,0,2.2,1,2.2,2.2C26.7,20.6,26.1,21.5,25.2,21.8z M27.3,14.4h-5.6v-2.8c0-1.5,1.3-2.8,2.8-2.8c0.8,0,1.5,0.3,2,0.8c0.5,0.5,0.8,1.2,0.8,2V14.4z"></path>
+                            </svg>
+                        </a>
+                        <span class="p-0 m-auto fs-4 fw-bold">Auth.NET</span>
+                        <button id="btn-close" type="button" title="Close" data-bs-dismiss="offcanvas" data-bs-toggle="tooltip" data-bs-placement="left" aria-label="Close">
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2 2l12 12M2 14L14 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </button>
+                    </div>
+                    <hr class="m-0" />
+                    <div class="offcanvas-body w-100 ms-2 p-auto">
+                        <ul class="navbar-nav justify-content-end flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Users</a>
+                                <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Users" asp-action="Index">Manage Users</a></li>
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Profiles</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
+
 
 
     <main role="main" class="container-fluid main-body">
