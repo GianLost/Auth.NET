@@ -1,10 +1,5 @@
 @import url("../colors/file-colors.css");
 
-#main-navbar li {
-    border-bottom: 2px solid var(--placeholder-style);
-    margin-right: 1rem;
-}
-
 body.lightmode #main-navbar a {
     color: #3c3c3c;
 }
@@ -14,11 +9,11 @@ body.darkmode #main-navbar a {
 }
 
 body.lightmode #toggle-nav {
-    border: 0.2rem solid #3c3c3c;
+    border: 0.16rem solid #3c3c3c;
 }
 
 body.darkmode #toggle-nav {
-    border: 0.2rem solid #cdcdcd;
+    border: 0.16rem solid #cdcdcd;
     color: #cdcdcd;
 }
 
@@ -69,11 +64,11 @@ body.darkmode #toggle-icon {
 }
 
 /* Estilo para o ícone no modo claro */
-body.lightmode .img-fluid {
-    fill: #000; /* Cor do ícone no modo claro */
+body.lightmode .offcanvas-header svg {
+    fill: #3c3c3c; /* Cor do ícone no modo claro */
 }
 
 /* Estilo para o ícone no modo escuro */
-body.darkmode .img-fluid {
+body.darkmode .offcanvas-header svg {
     fill: #cdcdcd; /* Cor do ícone no modo escuro */
 }

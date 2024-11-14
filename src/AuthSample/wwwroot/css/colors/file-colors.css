@@ -1,8 +1,8 @@
-﻿:root {
+﻿/*:root {
     --primary-color: #1b6ec2;
     --primary-links-color: #0077cc;
     --primary-border-color: #1861ac;
-    --dark-color: #0000;
+    --dark-color: #3c3c3c;
     --light-color: #ffff;
     --light-color-opacity-a: #ffffffd8;
     --light-color-opacity-b: #ffffffb9;
@@ -21,6 +21,18 @@
     --bg-grey-color: #5c5c5c;
     --dark-box-shadow: #0016;
     --transition-speed: 0.5s;
+}*/
+
+:root {
+    --bg-light: #fff;
+    --text-light: #3c3c3c;
+    --bg-dark: #3c3c3c;
+    --text-dark: #cdcdcd;
+    --link-light: #007bff;
+    --link-dark: #1e90ff;
+    --bg-lightmode-toggler-btn: #1a1562f2;
+    --bg-darkmode-toggler-btn: #ff98007f;
+    --bg-slider: #cdcdcd;
 }
 
 .text-purple {
