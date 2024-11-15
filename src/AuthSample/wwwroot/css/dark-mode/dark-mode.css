@@ -1,5 +1,6 @@
 @import url("../colors/file-colors.css");
 
+/* Estilos globais para lightmode e darkmode */
 body.lightmode {
     background-color: var(--bg-light);
     color: var(--text-light);
@@ -8,6 +9,11 @@ body.lightmode {
 body.darkmode {
     background-color: var(--bg-dark);
     color: var(--text-dark);
+}
+
+/* Transição suave para mudanças de tema */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 /* Estilos para o botão de alternância */
@@ -20,13 +26,12 @@ body.darkmode {
     width: 4.5rem;
     height: 2.1rem;
     border-radius: 1rem;
-    background-color: var(--bg-lightmode-toggler-btn); /* Cor de fundo inicial */
     transition: background-color 0.3s;
+    background-color: var(--bg-lightmode-toggler-btn);
 }
 
-/* Estado de modo escuro */
 body.darkmode .toggle-btn {
-    background-color: var(--bg-darkmode-toggler-btn); /* Cor de fundo para o modo escuro */
+    background-color: var(--bg-darkmode-toggler-btn);
 }
 
 .toggle-btn .slider {
@@ -45,28 +50,27 @@ body.darkmode .toggle-btn {
     font-size: 1rem;
 }
 
-body.lightmode .toggle-btn .circle {
+.toggle-btn .circle {
     position: absolute;
     top: 4px;
-    left: 6px;
     width: 26px;
     height: 26px;
     border-radius: 50%;
-    background-color: #f2d421;
     transition: all 0.3s;
+}
+
+body.lightmode .toggle-btn .circle {
+    left: 6px;
+    background-color: #f2d421;
 }
 
 body.darkmode .toggle-btn .circle {
-    position: absolute;
-    top: 4px;
     left: 10px;
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
     background-color: #3c3c3c;
-    transition: all 0.3s;
+    transform: translateX(30px); /* Move o círculo para o lado direito */
 }
 
+/* Estilos para o offcanvas */
 body.lightmode .offcanvas .offcanvas-body {
     background-color: var(--bg-light);
     color: var(--text-dark);
@@ -75,8 +79,4 @@ body.lightmode .offcanvas .offcanvas-body {
 body.darkmode .offcanvas, .offcanvas-body {
     background-color: var(--bg-dark);
     color: var(--text-dark);
-}
-
-body.darkmode .toggle-btn .circle {
-    transform: translateX(30px); /* Move o círculo para o lado direito */
 }

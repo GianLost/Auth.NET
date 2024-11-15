@@ -25,7 +25,10 @@
 
 :root {
     --bg-light: #fff;
+    --btn-light: #3c3c3c79;
+    --btn-dark: #cdcdcda5;
     --text-light: #3c3c3c;
+    --border-light: #3c3c3c8e;
     --bg-dark: #3c3c3c;
     --text-dark: #cdcdcd;
     --link-light: #007bff;
@@ -33,12 +36,6 @@
     --bg-lightmode-toggler-btn: #1a1562f2;
     --bg-darkmode-toggler-btn: #ff98007f;
     --bg-slider: #cdcdcd;
-}
-
-.text-purple {
-    color: var(--text-purple);
-}
-
-.text-purple:hover {
-    color: var(--text-purple-hover);
+    --bg-li-lightmode-hover: #cdcdcd7a;
+    --bg-li-darkmode-hover: #cdcdcd1c;
 }
