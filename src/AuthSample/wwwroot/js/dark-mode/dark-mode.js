@@ -1,37 +1,34 @@
-﻿function applySavedTheme() {
-    const theme = localStorage.getItem('theme'); // Recupera a preferência de tema
+﻿$(() => {
+    function applySavedTheme() {
+        const theme = localStorage.getItem('theme'); // Recupera a preferência de tema
 
-    if (theme) {
-        // Se o tema estiver salvo, aplica o tema correspondente
-        document.body.classList.add(theme);
-    } else {
-        // Caso não haja preferência salva, verifica o sistema
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.classList.add('darkmode');
+        if (theme) {
+            // Se o tema estiver salvo, aplica o tema correspondente
+            $('body').addClass(theme);
         } else {
-            document.body.classList.add('lightmode');
+            // Caso não haja preferência salva, verifica o sistema
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                $('body').addClass('darkmode');
+            } else {
+                $('body').addClass('lightmode');
+            }
         }
     }
-}
 
-// Função para alternar o tema
-function toggleTheme() {
-    if (document.body.classList.contains('darkmode')) {
-        document.body.classList.remove('darkmode');
-        document.body.classList.add('lightmode');
-        localStorage.setItem('theme', 'lightmode'); // Salva a preferência
-    } else {
-        document.body.classList.remove('lightmode');
-        document.body.classList.add('darkmode');
-        localStorage.setItem('theme', 'darkmode'); // Salva a preferência
+    // Função para alternar o tema
+    function toggleTheme() {
+        if ($('body').hasClass('darkmode')) {
+            $('body').removeClass('darkmode').addClass('lightmode');
+            localStorage.setItem('theme', 'lightmode'); // Salva a preferência
+        } else {
+            $('body').removeClass('lightmode').addClass('darkmode');
+            localStorage.setItem('theme', 'darkmode'); // Salva a preferência
+        }
     }
-}
 
-// Aplica o tema salvo quando a página carregar
-applySavedTheme();
+    // Aplica o tema salvo quando a página carregar
+    applySavedTheme();
 
-// Adiciona o evento de clique no botão para alternar o tema
-const toggleButton = document.getElementById('theme-toggle');
-if (toggleButton) {
-    toggleButton.addEventListener('click', toggleTheme);
-}
+    // Adiciona o evento de clique no botão para alternar o tema
+    $('#theme-toggle').on('click', toggleTheme);
+});

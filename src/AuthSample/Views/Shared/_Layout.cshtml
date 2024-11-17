@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Gianluca Vialli Ribeiro Vieira">
     <meta name="description" content="Biblioteca .Net para autenticação de usuários e gerenciamento de sessão com permissionamento.">
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/css/dark-mode/dark-mode.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/navbar/navbar.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/components/components.css" asp-append-version="true" />
-
+    <link rel="stylesheet" href="~/css/forms/forms.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/login-page/login.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/users-page/register.css" asp-append-version="true" />
 
@@ -28,7 +28,7 @@
 <body>
 
     <header>
-        <nav id="main-navbar" class="navbar navbar-light border-bottom border-1 fixed-top p-2">
+        <nav id="main-navbar" class="navbar navbar-light border-bottom border-secondary border-1 fixed-top p-2">
             <div class="container-fluid">
                 <button id="toggle-nav" title="menu" class="btn btn-sm navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <svg id="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -42,7 +42,7 @@
                         </a>
                         <span class="p-0 m-auto fs-4 fw-bold">Auth.NET</span>
                         <button id="btn-close" type="button" title="Close" data-bs-dismiss="offcanvas" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Close">
-                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M2 2l12 12M2 14L14 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                             </svg>
                         </button>
@@ -59,14 +59,13 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="offconvas-footer border-top py-3 mb-0 w-100">
-                        <div class="col d-flex justify-content-start">
-                            <a class="btn btn-sm btn-secondary text-light ms-3 me-3" asp-area="" asp-controller="" asp-action=""><i class="bi bi-person-plus-fill"></i> Register</a>
-                            <a class="btn btn-sm btn-dark text-light" asp-area="" asp-controller="" asp-action=""><i class="bi bi-door-open"></i> Login</a>
+                    <div class="offcanvas-footer">
+                        <div class="col d-flex justify-content-start mt-3 mb-3">
+                            <a class="btn btn-sm btn-green text-light ms-3 me-3" asp-area="" asp-controller="Login" asp-action="SignIn">Sign in</a>
+                            <a class="btn btn-sm btn-secondary text-light" asp-area="" asp-controller="" asp-action="">Sign up</a>
                         </div>
                     </div>
                 </div>
-                <a class="navbar-brand fs-5" asp-area="" asp-controller="Home" asp-action="Index">Auth.NET</a>
                 <!-- Botão de alternância para o modo claro/escuro -->
                 <div class="theme-toggle ms-3 me-3">
                     <button id="theme-toggle" class="toggle-btn">
@@ -85,9 +84,14 @@
         @RenderBody()
     </main>
 
-    <footer class="border-top footer text-muted">
+    <footer class="border-top border-secondary footer">
         <div class="container">
-            &copy; 2024 - AuthSample - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <span>
+                &copy; @DateTime.Now.ToString("yyyy") - Auth.NET
+                <i class="bi bi-cpu-fill ms-2 me-1"></i> Developed by - <a href="https://github.com/GianLost" aria-label="Contact us on Github" target="_blank"> &copy; Gianluca Vialli</a> <a href="https://www.linkedin.com/in/gianluca-vialli-5a2a8a226/" aria-label="Contact us on LinkedIn" target="_blank"> <i class="bi bi-linkedin text-primary ms-1"></i> </a> <a href="https://www.instagram.com/gianluca.vialli_ufo/" aria-label="Contact us on Instagram" target="_blank">
+                    <i class="ms-2 bi bi-instagram text-danger"></i>
+                </a>
+            </span>
         </div>
     </footer>
 
@@ -104,7 +108,7 @@
     <script src="~/js/forms/form.js" asp-append-version="true"></script>
 
     <!-- dark-mode js -->
-    <script src="~/js/dark-mode/dark-mode.js" asp-append-version="true"></script>
+    <script src="~/js/dark-mode/dark-mode.js" asp-append-version="true" defer></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 

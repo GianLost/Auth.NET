@@ -4,4 +4,4 @@
 export const loginPasswordInput = $(".input-password");
 export const loginTogglePasswordButton = $(".toggle-password");
 
-export const iconLogin = $(".door");
+/*export const iconLogin = $(".door");*/

@@ -5,7 +5,7 @@
         label.style.fontSize = '0.8rem';
         label.style.fontWeight = '500';
         label.style.padding = '0.35rem';
-        label.style.backgroundColor = '#5c5c5c';
+        label.style.backgroundColor = '#fff';
         label.style.borderRadius = '3px';
         label.style.transition = 'all 0.13s linear';
     } else {

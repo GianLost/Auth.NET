@@ -1,23 +1,27 @@
 @import url("../css/colors/file-colors.css");
 
-/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    text-align: inherit;
 }
 
-/* Layout Styles */
 html, body {
     width: 100%;
     min-height: 100%;
     display: flex;
     position: relative;
+    font-size: 0.95rem;
 }
 
 body {
     align-items: center;
+}
+
+body.lightmode nav {
+    border-bottom-color: var(--bg-slider) !important;
 }
 
 .footer {
@@ -29,11 +33,59 @@ body {
     width: 100%;
     height: 4.5rem;
     text-align: center;
-    white-space: nowrap;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-primary-color) !important;
+}
+
+body.lightmode .footer {
+    border-top-color: var(--bg-slider) !important;
+}
+
+body.lightmode .footer a{
+    color: var(--text-lightmode-primary-color) !important;
+}
+
+body.darkmode .footer a{
+    color: var(--text-darkmode-primary-color) !important;
+}
+
+body.darkmode .footer {
+    color: var(--bg-light) !important;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+.btn-dark {
+    background-color: var(--bg-dark);
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: var(--btn-light-hover);
+}
+
+.btn-green {
+    background-color: var(--btn-green);
+    border: none;
+    color: var(--bg-light);
+}
+
+.btn-green:hover {
+    background-color: var(--btn-green-hover);
+    color: var(--bg-light);
 }
 
 button:focus,
 button:active {
-    box-shadow: none !important; /* Remove a sombra */
-    outline: none; /* Remove o contorno padrão do navegador */
+    box-shadow: none !important;
+    outline: none;
 }

@@ -1,4 +1,4 @@
-﻿$(document).ready(function () {
+﻿(() => {
     const $alert = $('.alert');
     const $closeButton = $('.close-alert');
 

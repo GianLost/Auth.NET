@@ -1,6 +1,10 @@
 @import url("../colors/file-colors.css");
 
-/* Estilos globais para lightmode e darkmode */
+/* Estilos globais */
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 body.lightmode {
     background-color: var(--bg-light);
     color: var(--text-light);
@@ -11,9 +15,41 @@ body.darkmode {
     color: var(--text-dark);
 }
 
-/* Transição suave para mudanças de tema */
-body {
-    transition: background-color 0.5s ease, color 0.5s ease;
+body.lightmode .offcanvas-body,
+body.lightmode .offcanvas {
+    background-color: var(--bg-light);
+    color: var(--text-light);
+}
+
+body.darkmode #main-navbar,
+body.darkmode .footer,
+body.darkmode .offcanvas,
+body.darkmode .offcanvas-body {
+    background-color: var(--bg-dark-2);
+}
+
+body.lightmode .offcanvas {
+    border: 0.13rem solid var(--bg-slider);
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+body.darkmode .offcanvas{
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+body.lightmode .offcanvas .offcanvas-footer {
+    border-top: 0.13rem solid var(--bg-slider);
+    border-radius: 0rem 0rem 1rem 0rem;
+}
+
+body.darkmode .offcanvas .offcanvas-footer {
+    border-top: 0.13rem solid var(--bg-li-darkmode-hover);
+    border-radius: 0rem 0rem 1rem 0rem;
+}
+
+.offcanvas-header a img {
+    border: 0.1rem solid var(--bg-slider);
+    border-radius: 0.3rem;
 }
 
 /* Estilos para o botão de alternância */
@@ -23,9 +59,9 @@ body {
     cursor: pointer;
     padding: 0;
     position: relative;
-    width: 4.5rem;
-    height: 2.1rem;
-    border-radius: 1rem;
+    width: 5.5rem;
+    height: 2.5rem;
+    border-radius: 2rem;
     transition: background-color 0.3s;
     background-color: var(--bg-lightmode-toggler-btn);
 }
@@ -47,14 +83,14 @@ body.darkmode .toggle-btn {
 
 .toggle-btn .icon-sun,
 .toggle-btn .icon-moon {
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 .toggle-btn .circle {
     position: absolute;
-    top: 4px;
-    width: 26px;
-    height: 26px;
+    top: 0.4rem;
+    width: 1.7rem;
+    height: 1.7rem;
     border-radius: 50%;
     transition: all 0.3s;
 }
@@ -67,16 +103,23 @@ body.lightmode .toggle-btn .circle {
 body.darkmode .toggle-btn .circle {
     left: 10px;
     background-color: #3c3c3c;
-    transform: translateX(30px); /* Move o círculo para o lado direito */
+    transform: translateX(2.7rem); /* Move o círculo para o lado direito */
 }
 
-/* Estilos para o offcanvas */
-body.lightmode .offcanvas .offcanvas-body {
+body.lightmode nav .btn-dark {
     background-color: var(--bg-light);
-    color: var(--text-dark);
+    color: var(--text-light) !important;
+    text-decoration: underline 0.1rem solid var(--text-light);
+    border: none;
 }
 
-body.darkmode .offcanvas, .offcanvas-body {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
+body.darkmode nav .btn-dark {
+    background-color: var(--bg-dark-2);
+    text-decoration: underline 0.1rem solid var(--text-dark);
+    border: none;
+}
+
+nav .btn-dark:hover {
+    transform: scale(1.1); /* Amplia 5% o botão */
+    transition: transform 0.1s ease; /* Faz o efeito suave */
 }
