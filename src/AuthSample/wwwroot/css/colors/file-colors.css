@@ -2,6 +2,7 @@
     --bg-light: #fff;
     --bg-dark: #010409;
     --bg-dark-2: #151b23;
+    --bg-secondary: #6c747e;
     --bg-slider: #cdcdcd;
     --text-light: #3c3c3c;
     --text-dark: #cdcdcd;
@@ -14,6 +15,5 @@
     --bg-li-darkmode-hover: #cdcdcd1c;
     --bg-lightmode-toggler-btn: #1a1562f2;
     --bg-darkmode-toggler-btn: #ff98007f;
-    --text-darkmode-primary-color: #4493f8;
-    --text-lightmode-primary-color: #1e76bd;
+    --text-primary-color: #1e76bd;
 }

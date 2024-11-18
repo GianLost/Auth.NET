@@ -28,7 +28,7 @@
 <body>
 
     <header>
-        <nav id="main-navbar" class="navbar navbar-light border-bottom border-secondary border-1 fixed-top p-2">
+        <nav class="navbar navbar-light border-bottom border-secondary border-1 fixed-top p-2">
             <div class="container-fluid">
                 <button id="toggle-nav" title="menu" class="btn btn-sm navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                     <svg id="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -62,7 +62,7 @@
                     <div class="offcanvas-footer">
                         <div class="col d-flex justify-content-start mt-3 mb-3">
                             <a class="btn btn-sm btn-green text-light ms-3 me-3" asp-area="" asp-controller="Login" asp-action="SignIn">Sign in</a>
-                            <a class="btn btn-sm btn-secondary text-light" asp-area="" asp-controller="" asp-action="">Sign up</a>
+                            <a class="btn btn-sm btn-secondary text-light" asp-area="" asp-controller="User" asp-action="Register">Sign up</a>
                         </div>
                     </div>
                 </div>
@@ -80,11 +80,11 @@
         </nav>
     </header>
 
-    <main role="main" class="container-fluid main-body">
+    <main role="main" class="container-fluid">
         @RenderBody()
     </main>
 
-    <footer class="border-top border-secondary footer">
+    <footer class="footer">
         <div class="container">
             <span>
                 &copy; @DateTime.Now.ToString("yyyy") - Auth.NET

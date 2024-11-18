@@ -1,0 +1,108 @@
+﻿@using Auth.NET.Libs.Helpers.Expressions
+@using Auth.NET.Libs.Helpers.Messages
+
+@{
+    ViewData["Title"] = "User register";
+}
+
+<div class="container forms">
+
+    <div class="card col-md-8">
+
+        <div class="card-body">
+
+            <form id="register-user-form" asp-action="" asp-controller="" method="post" class="needs-validation" novalidate>
+
+                <div class="row">
+
+                    <!-- Campo Nome -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" id="name" name="Name" data-validation-rules="required, min-length" data-min-length="6" autocomplete="Name" required>
+                            <label for="name" class="floating-label-text">Nome completo</label>
+                            <div class="invalid-tooltip"><span></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Campo Login -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="text" class="form-control" id="login" name="Login" data-validation-rules="required, min-length" data-min-length="6" autocomplete="UserName" required>
+                            <label for="login" class="floating-label-text">Login</label>
+                            <div class="invalid-tooltip"><span>)</span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <!-- Campo Email -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="email" class="form-control" id="email" name="Email" data-validation-rules="required, pattern" maxlength="100" data-pattern="@ConstExpressions.EmailRegex.Trim()" autocomplete="Email" required>
+                            <label for="email" class="floating-label-text">Email</label>
+                            <div class="invalid-tooltip"><span></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Campo Confirmar Email -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="email" class="form-control" id="confirm-email" data-validation-rules="required, confirm-email, pattern" data-pattern="@ConstExpressions.EmailRegex.Trim()" data-confirm-email-for="email" maxlength="100" name="ConfirmEmail" autocomplete="Email" required />
+                            <label for="confirm-email" class="floating-label-text">Confirme seu email</label>
+                            <div class="invalid-tooltip"><span></span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <!-- Campo Senha -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="password" class="form-control input-password" id="password" name="Password" data-validation-rules="required, pattern" minlength="8" data-pattern="@ConstExpressions.StrongPasswordRegex.Trim()" data-error-message="@ErrorMessages.MsgPasswordRegex.Trim()" autocomplete="new-password" required>
+                            <label for="password" class="floating-label-text">Sua senha</label>
+                            <i data-bs-toggle="tooltip" data-bs-placement="right" title="Exibir senha ..." class="bi bi-eye-slash-fill toggle-password"></i>
+                            <div class="invalid-tooltip"><span></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Campo Confirmar Senha -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="password" class="form-control input-password" id="confirm-password" data-validation-rules="required, confirm-password" data-confirm-password-for="password" minlength="8" name="ConfirmPassword" autocomplete="current-password" required />
+                            <label for="confirm-password" class="floating-label-text">Confirme sua senha</label>
+                            <i data-bs-toggle="tooltip" data-bs-placement="right" title="Exibir senha ..." class="bi bi-eye-slash-fill toggle-password"></i>
+                            <div class="invalid-tooltip"><span></span></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <!-- Campo Celular -->
+                    <div class="col-md-6 form-group floating-label">
+                        <div class="position-relative">
+                            <input type="tel" class="form-control" maxlength="15" id="cellPhone" name="CellPhone" data-validation-rules="required, pattern" data-pattern="@ConstExpressions.PhoneNumberRegex.Trim()" autocomplete="tel" required>
+                            <label for="cellPhone" class="floating-label-text">Telefone (XX) XXXXX-XXXX</label>
+                            <div class="invalid-tooltip"><span></span></div>
+                        </div>
+                    </div>
+
+                    <!-- Botão de Envio -->
+                    <div class="w-100 col-md-12">
+                        <button type="submit" class="btn btn-block btn-green" data-bs-toggle="tooltip" data-bs-placement="right" title="Clique para cadastrar o usuário ...">Sign up</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>

@@ -5,35 +5,22 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+body.lightmode nav {
+    border-bottom-color: var(--bg-slider) !important;
+}
+
+body.darkmode .footer {
+    border-color: var(--bg-secondary);
+}
+
+/* lightmode navbar */
 body.lightmode {
     background-color: var(--bg-light);
     color: var(--text-light);
 }
 
-body.darkmode {
-    background-color: var(--bg-dark);
-    color: var(--text-dark);
-}
-
-body.lightmode .offcanvas-body,
-body.lightmode .offcanvas {
-    background-color: var(--bg-light);
-    color: var(--text-light);
-}
-
-body.darkmode #main-navbar,
-body.darkmode .footer,
-body.darkmode .offcanvas,
-body.darkmode .offcanvas-body {
-    background-color: var(--bg-dark-2);
-}
-
 body.lightmode .offcanvas {
     border: 0.13rem solid var(--bg-slider);
-    border-radius: 0rem 1rem 1rem 0rem;
-}
-
-body.darkmode .offcanvas{
     border-radius: 0rem 1rem 1rem 0rem;
 }
 
@@ -42,68 +29,9 @@ body.lightmode .offcanvas .offcanvas-footer {
     border-radius: 0rem 0rem 1rem 0rem;
 }
 
-body.darkmode .offcanvas .offcanvas-footer {
-    border-top: 0.13rem solid var(--bg-li-darkmode-hover);
-    border-radius: 0rem 0rem 1rem 0rem;
-}
-
-.offcanvas-header a img {
-    border: 0.1rem solid var(--bg-slider);
-    border-radius: 0.3rem;
-}
-
-/* Estilos para o botão de alternância */
-.toggle-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-    width: 5.5rem;
-    height: 2.5rem;
-    border-radius: 2rem;
-    transition: background-color 0.3s;
-    background-color: var(--bg-lightmode-toggler-btn);
-}
-
-body.darkmode .toggle-btn {
-    background-color: var(--bg-darkmode-toggler-btn);
-}
-
-.toggle-btn .slider {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 8px;
-    width: 100%;
-    height: 100%;
-    color: var(--bg-slider);
-}
-
-.toggle-btn .icon-sun,
-.toggle-btn .icon-moon {
-    font-size: 1.3rem;
-}
-
-.toggle-btn .circle {
-    position: absolute;
-    top: 0.4rem;
-    width: 1.7rem;
-    height: 1.7rem;
-    border-radius: 50%;
-    transition: all 0.3s;
-}
-
 body.lightmode .toggle-btn .circle {
     left: 6px;
     background-color: #f2d421;
-}
-
-body.darkmode .toggle-btn .circle {
-    left: 10px;
-    background-color: #3c3c3c;
-    transform: translateX(2.7rem); /* Move o círculo para o lado direito */
 }
 
 body.lightmode nav .btn-dark {
@@ -113,13 +41,98 @@ body.lightmode nav .btn-dark {
     border: none;
 }
 
+/* lightmode card component */
+body.lightmode .card .card-header {
+    background-color: var(--text-light);
+    color: var(--bg-light);
+}
+
+body.lightmode .card .card-footer p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-lightmode-primary-color) !important;
+}
+
+body.lightmode .card .card-footer {
+    background-color: var(--bg-light);
+    border-top: 0.15rem solid var(--bg-slider) !important;
+}
+
+/* darkmode navbar */
+body.darkmode {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-dark);
+}
+
+body.darkmode nav {
+    background-color: var(--bg-dark-2);
+}
+
+body.darkmode,
+body.darkmode .footer,
+body.darkmode .offcanvas,
+body.darkmode .offcanvas-body {
+    background-color: var(--bg-dark-2);
+}
+
+body.darkmode .offcanvas{
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+body.darkmode .offcanvas .offcanvas-footer {
+    border-top: 0.13rem solid var(--bg-li-darkmode-hover);
+    border-radius: 0rem 0rem 1rem 0rem;
+}
+
+body.darkmode .toggle-btn {
+    background-color: var(--bg-darkmode-toggler-btn);
+}
+
+body.darkmode .toggle-btn .circle {
+    left: 10px;
+    background-color: #3c3c3c;
+    transform: translateX(2.7rem);
+}
+
 body.darkmode nav .btn-dark {
     background-color: var(--bg-dark-2);
     text-decoration: underline 0.1rem solid var(--text-dark);
     border: none;
 }
 
-nav .btn-dark:hover {
-    transform: scale(1.1); /* Amplia 5% o botão */
-    transition: transform 0.1s ease; /* Faz o efeito suave */
+/*darkmode card component*/
+body.darkmode .card .card-header {
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+}
+
+body.darkmode .card .card-body {
+    background-color: var(--bg-dark-2);
+}
+
+body.darkmode .card .card-footer {
+    background-color: var(--bg-dark-2);
+    color: var(--bg-light);
+}
+
+body.darkmode .card .card-footer p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text-primary-color) !important;
+}
+
+body.darkmode .form-group input {
+    background-color: var(--bg-dark-2);
+    color: var(--bg-slider);
+    caret-color: var(--bg-slider) !important;
+}
+
+body.darkmode .form-group input:focus {
+    background-color: var(--bg-dark-2);
+    color: var(--bg-slider);
+}
+
+body.darkmode .floating-label-text {
+    background-color: var(--bg-dark-2) !important;
+    color: var(--bg-slider) !important;
 }

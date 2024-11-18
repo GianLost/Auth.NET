@@ -1,61 +1,32 @@
 ﻿@import url("../colors/file-colors.css");
 
-.card .card-header {
-    background-color: var(--bg-dark);
-    color: var(--bg-light);
+.forms {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
-body.darkmode .card .card-header {
-    background-color: var(--bg-dark-2);
+.forms input {
+    margin: 1.3rem 0;
 }
 
-body.darkmode .card .card-body {
-    background-color: var(--bg-dark-2);
+form .form-control:invalid,
+form .form-control:valid {
+    box-shadow: none !important;
 }
 
-body.darkmode .card .card-footer {
-    background-color: var(--bg-dark-2);
-    color: var(--bg-light) !important;
-}
-
-body.lightmode #login-card .card-footer p a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--text-lightmode-primary-color) !important;
-}
-
-body.darkmode #login-card .card-footer p a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--text-darkmode-primary-color) !important;
-}
-
-body.lightmode #login-card .card-footer {
-    background-color: var(--bg-light);
-    border-top: 0.15rem solid var(--bg-slider) !important;
-}
-
-/* Form Styles */
 .form-group input {
     width: 100%;
     border: 0.15rem solid;
     color: var(--text-light);
     caret-color: var(--text-light) !important;
-}
-
-body.darkmode .form-group input {
-    background-color: var(--bg-dark-2);
-    color: var(--bg-slider);
-    caret-color: var(--bg-slider) !important;
-}
-
-.form-group input:focus {
-    color: var(--text-light);
-}
-
-body.darkmode .form-group input:focus {
-    background-color: var(--bg-dark-2);
-    color: var(--bg-slider);
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 6px;
 }
 
 .floating-label-text {
@@ -68,13 +39,17 @@ body.darkmode .form-group input:focus {
     transform: translateY(-50%);
 }
 
-body.darkmode .floating-label-text {
-    background-color: var(--bg-dark-2) !important;
-    color: var(--bg-slider) !important;
+.card {
+    border: 2px solid var(--bg-secondary);
+    border-radius: 0.8rem;
+    overflow: hidden;
 }
 
-/* Remover borda e sombra dos inputs de formulários */
-form .form-control:invalid,
-form .form-control:valid {
-    box-shadow: none !important;
+.card .card-body {
+    padding: 2rem 2.5rem;
+}
+
+.card .card-header {
+    text-align: center;
+    padding: 1.5rem 1rem;
 }

@@ -1,49 +1,19 @@
-/* Importação de estilos */
 @import url("../colors/file-colors.css");
 
-/* Cartão de Login */
-#login-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem; /* Adicionado para espaçamento em telas menores */
+#login-form {
+    max-width: 25rem;
 }
 
-#login-card {
-    max-width: 29.5rem;
-    min-width: 25rem;
-    border-radius: 0.8rem;
-    overflow: hidden;
-}
-
-#login-card .card-header {
-    text-align: center;
-    background-color: var(--bg-dark); /* Fundo escuro para contraste */
-    padding: 1.5rem 1rem; /* Espaçamento maior */
+#login-form input{
+    margin: 1rem 0;
 }
 
 #login-card .card-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: auto; /* Removida altura fixa para maior flexibilidade */
-    padding: 2rem 2.5rem; /* Espaçamento interno maior */
-}
-
-#login-form input {
-    margin: 1rem 0;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    border: 1px solid var(--bg-dark);
-    border-radius: 6px;
+    padding: 2rem 3rem;
 }
 
 #login-form button {
-    max-width: 100%;
     padding: 0.75rem;
-    font-weight: bold;
     border-radius: 6px;
+    margin-top: 0.75rem;
 }
