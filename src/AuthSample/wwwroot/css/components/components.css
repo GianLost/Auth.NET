@@ -8,13 +8,13 @@
     justify-content: center;
     position: absolute;
     top: 51%;
-    right: 1.6rem;
+    right: 2rem;
     font-size: 1.1rem;
     transform: translateY(-50%);
     cursor: pointer;
     border-color: var(--light-color);
-    background-color: var(--bg-grey-color);
-    color: var(--placeholder-style);
+    background-color: transparent);
+    color: var(--bg-secondary);
 }
 
 .bi-eye-slash-fill:hover,

@@ -1,101 +1,53 @@
 @import url("../colors/file-colors.css");
 
 /* Estilos globais */
-#main-navbar li a {
+.navbar li a {
     border-radius: 0.3rem;
     display: flex;
     align-items: center;
-    padding: 8px;
+    padding: 8px !important;
     transition: background-color 0.3s, color 0.3s;
 }
 
-#main-navbar li a i {
-    margin-right: 0.5rem;
-}
-
-/* Modo Claro */
-body.lightmode #main-navbar a {
-    color: var(--text-light);
-}
-
-body.lightmode #main-navbar li a:hover {
-    background-color: var(--bg-li-lightmode-hover);
-    color: var(--bg-dark);
-}
-
-/* Modo Escuro */
-body.darkmode #main-navbar a {
-    color: var(--text-dark);
-}
-
-body.darkmode #main-navbar li a:hover {
-    background-color: var(--bg-li-darkmode-hover);
+.navbar li a i {
+    margin-right: 0.5rem !important;
 }
 
 /* Ícones do Navbar */
-#toggle-icon {
+nav svg{
     width: 10rem;
     color: var(--text-light);
 }
 
-body.darkmode #toggle-icon {
-    color: var(--text-dark);
-}
-
 /* Botão de fechar */
-#btn-close {
+.btn-close {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 1.5rem;
+    height: 1.5rem;
     border: none;
     border-radius: 6px;
     padding: 0;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
- /* Cor do X */
 }
 
-body.lightmode #btn-close {
-    background-color: var(--bg-li-lightmode-hover);
-    color: var(--btn-light); /* Cor do X */
-}
-
-body.lightmode #btn-close:hover {
-    color: var(--text-light); /* Cor do X */
-}
-
-body.darkmode #btn-close {
-    background-color: var(--bg-li-darkmode-hover);
-    color: var(--btn-dark); /* Cor do X */
-}
-
-body.darkmode #btn-close:hover {
-    color: var(--bg-light); /* Cor do X */
-}
-
-#btn-close svg {
+nav .btn-close svg {
     width: 16px;
     height: 16px;
 }
 
-#toggle-nav {
+nav .navbar-toggler {
     display: flex;
     align-items: center;
-    border: 0.16rem solid var(--bg-dark);
     max-width: 2.5rem;
     height: 1.8rem;
     padding: 0.5rem;
 }
 
-#toggle-nav svg{
+nav .navbar-toggler svg{
     min-width: 100%;
-}
-
-body.darkmode #toggle-nav {
-    border-color: var(--text-dark);
-    color: var(--text-dark);
 }
 
 .offcanvas-header a img {

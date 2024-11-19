@@ -1,22 +1,59 @@
 @import url("../colors/file-colors.css");
 
-/* Estilos globais */
+/* darkmode layout */
 body {
     transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body.lightmode {
+    background-color: var(--bg-light-2);
+    color: var(--text-light);
+}
+
+body.lightmode nav, 
+body.lightmode footer{
+    background-color: var(--bg-light);
+    color: var(--text-light);
 }
 
 body.lightmode nav {
     border-bottom-color: var(--bg-slider) !important;
 }
 
-body.darkmode .footer {
-    border-color: var(--bg-secondary);
+body.darkmode {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-dark);
 }
 
+body.darkmode .footer {
+    border-top-color: var(--bg-secondary);
+}
+
+body.darkmode nav {
+    background-color: var(--bg-dark-2);
+}
 /* lightmode navbar */
-body.lightmode {
-    background-color: var(--bg-light);
+body.lightmode .navbar a {
     color: var(--text-light);
+}
+
+body.lightmode nav .navbar-toggler {
+    border-color: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+body.lightmode .navbar li a:hover {
+    background-color: var(--bg-li-lightmode-hover);
+    color: var(--bg-dark);
+}
+
+body.lightmode .btn-close {
+    background-color: transparent;
+    color: var(--btn-light);
+}
+
+body.lightmode .btn-close:hover {
+    background-color: var(--btn-dark);
 }
 
 body.lightmode .offcanvas {
@@ -34,13 +71,6 @@ body.lightmode .toggle-btn .circle {
     background-color: #f2d421;
 }
 
-body.lightmode nav .btn-dark {
-    background-color: var(--bg-light);
-    color: var(--text-light) !important;
-    text-decoration: underline 0.1rem solid var(--text-light);
-    border: none;
-}
-
 /* lightmode card component */
 body.lightmode .card .card-header {
     background-color: var(--text-light);
@@ -50,7 +80,7 @@ body.lightmode .card .card-header {
 body.lightmode .card .card-footer p a {
     text-decoration: none;
     font-weight: bold;
-    color: var(--text-lightmode-primary-color) !important;
+    color: var(--text-primary-color) !important;
 }
 
 body.lightmode .card .card-footer {
@@ -59,16 +89,33 @@ body.lightmode .card .card-footer {
 }
 
 /* darkmode navbar */
-body.darkmode {
-    background-color: var(--bg-dark) !important;
+body.darkmode .navbar a {
+    color: var(--text-dark) !important;
+
+}
+
+body.darkmode .navbar li a:hover {
+    background-color: var(--bg-li-darkmode-hover);
+}
+
+body.darkmode .navbar svg {
+    color: var(--text-dark) !important;
+}
+
+body.darkmode .btn-close {
+    background-color: transparent;
+    color: var(--btn-dark-2);
+}
+
+body.darkmode .btn-close:hover {
+    background-color: var(--btn-light);
+}
+
+body.darkmode nav .navbar-toggler {
+    border-color: var(--text-dark);
     color: var(--text-dark);
 }
 
-body.darkmode nav {
-    background-color: var(--bg-dark-2);
-}
-
-body.darkmode,
 body.darkmode .footer,
 body.darkmode .offcanvas,
 body.darkmode .offcanvas-body {
@@ -94,12 +141,6 @@ body.darkmode .toggle-btn .circle {
     transform: translateX(2.7rem);
 }
 
-body.darkmode nav .btn-dark {
-    background-color: var(--bg-dark-2);
-    text-decoration: underline 0.1rem solid var(--text-dark);
-    border: none;
-}
-
 /*darkmode card component*/
 body.darkmode .card .card-header {
     background-color: var(--bg-dark);
@@ -121,6 +162,7 @@ body.darkmode .card .card-footer p a {
     color: var(--text-primary-color) !important;
 }
 
+/* darmode forms */
 body.darkmode .form-group input {
     background-color: var(--bg-dark-2);
     color: var(--bg-slider);
@@ -135,4 +177,19 @@ body.darkmode .form-group input:focus {
 body.darkmode .floating-label-text {
     background-color: var(--bg-dark-2) !important;
     color: var(--bg-slider) !important;
+}
+
+/* Estilo genérico para autofill darkmode */
+body.darkmode input:-webkit-autofill,
+body.darkmode input:-webkit-autofill:hover,
+body.darkmode input:-webkit-autofill:focus,
+body.darkmode textarea:-webkit-autofill,
+body.darkmode textarea:-webkit-autofill:hover,
+body.darkmode textarea:-webkit-autofill:focus,
+body.darkmode select:-webkit-autofill,
+body.darkmode select:-webkit-autofill:hover,
+body.darkmode select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--text-dark) !important; /* Define a cor do texto */
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; /* Remove o fundo */
+    transition: background-color 5000s ease-in-out 0s;
 }

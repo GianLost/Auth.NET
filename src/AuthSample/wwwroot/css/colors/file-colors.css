@@ -1,5 +1,6 @@
 ﻿:root {
     --bg-light: #fff;
+    --bg-light-2: #e9eef6;
     --bg-dark: #010409;
     --bg-dark-2: #151b23;
     --bg-secondary: #6c747e;
@@ -16,4 +17,5 @@
     --bg-lightmode-toggler-btn: #1a1562f2;
     --bg-darkmode-toggler-btn: #ff98007f;
     --text-primary-color: #1e76bd;
+    --danger-color: #dc3546c1;
 }

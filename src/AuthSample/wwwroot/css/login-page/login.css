@@ -17,3 +17,8 @@
     border-radius: 6px;
     margin-top: 0.75rem;
 }
+
+#login-form .bi-eye-slash-fill,
+.bi-eye-fill {
+    right: 1.4rem;
+}
