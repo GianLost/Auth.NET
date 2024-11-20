@@ -5,7 +5,7 @@ tooltipTriggerList.forEach(function (tooltipTriggerEl) {
     var tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
     tooltipList.push(tooltip);
 
-    // Adicione um evento de clique para ocultar o tooltip ao clicar
+    // Add a click event to hide the tooltip on click
     tooltipTriggerEl.addEventListener('mouseleave', function () {
         tooltip.hide();
     });

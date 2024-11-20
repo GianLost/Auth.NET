@@ -1,195 +1,219 @@
 @import url("../colors/file-colors.css");
 
-/* darkmode layout */
-body {
-    transition: background-color 0.5s ease, color 0.5s ease;
+/* Base styles*/
+html body.lightmode a {
+    color: var(--blue-light-primary);
 }
 
+html body.lightmode a:hover {
+    color: var(--blue-light-hover);
+}
+
+html body.darkmode a {
+    color: var(--blue-dark-primary);
+}
+
+html body.darkmode a:hover {
+    color: var(--blue-dark-hover);
+}
+
+/* lightmode styles */
 body.lightmode {
     background-color: var(--bg-light-2);
     color: var(--text-light);
 }
 
+body.lightmode nav {
+    border-bottom: 1px solid var(--bg-slider) !important;
+}
+
 body.lightmode nav, 
-body.lightmode footer{
+body.lightmode footer,
+body.lightmode .card,
+body.lightmode .card .card-header,
+body.lightmode .card .card-footer {
     background-color: var(--bg-light);
     color: var(--text-light);
 }
 
-body.lightmode nav {
-    border-bottom-color: var(--bg-slider) !important;
+/* lightmode navbar */
+body.lightmode .navbar a,
+body.lightmode .btn-close {
+    color: var(--text-light);
 }
 
+body.lightmode .navbar li a:hover,
+body.lightmode .btn-close:hover{
+    background-color: var(--bg-li-lightmode-hover);
+    color: var(--bg-secondary) !important;
+}
+
+/* lightmode offcanvas */
+body.lightmode .offcanvas{
+    border: 0.13rem solid var(--bg-slider);
+}
+
+body.lightmode .offcanvas-footer{
+    border-top: 0.13rem solid var(--bg-slider);
+}
+
+/* lightmode toggle-btn */
+body.lightmode .toggle-btn {
+    background-color: var(--bg-lightmode-toggler-btn);
+}
+
+body.lightmode .toggle-btn .circle {
+    left: 6px;
+    background-color: var(--bg-lightmode-toggle-circle);
+}
+
+/* lightmode forms */
+body.lightmode form .form-group,
+body.lightmode form .form-group input{
+    border-color: var(--bg-slider);
+    color: var(--bg-secondary);
+}
+
+/* lightmode tooltips */
+body.lightmode .tooltip-inner {
+    max-width: 20rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: var(--bg-dark) !important;
+}
+
+body.lightmode .tooltip.top > .tooltip-arrow {
+    color: var(--bg-dark) !important;
+}
+
+body.lightmode .tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--bg-dark) !important;
+    border-top-width: 0.6rem;
+}
+
+body.lightmode .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: var(--bg-dark) !important;
+    border-bottom-width: 0.6rem;
+}
+
+body.lightmode .tooltip.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: var(--bg-dark) !important;
+    border-left-width: 0.6rem;
+}
+
+body.lightmode .tooltip.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: var(--bg-dark) !important;
+    border-right-width: 0.6rem;
+}
+
+/* darmode styles */
 body.darkmode {
     background-color: var(--bg-dark) !important;
     color: var(--text-dark);
 }
 
-body.darkmode .footer {
-    border-top-color: var(--bg-secondary);
-}
-
-body.darkmode nav {
+body.darkmode nav,
+body.darkmode footer,
+body.darkmode .offcanvas,
+body.darkmode .offcanvas-body,
+body.darkmode .card,
+body.darkmode .card .card-header,
+body.darkmode .card .card-body,
+body.darkmode .card .card-footer {
     background-color: var(--bg-dark-2);
-}
-/* lightmode navbar */
-body.lightmode .navbar a {
-    color: var(--text-light);
-}
-
-body.lightmode nav .navbar-toggler {
-    border-color: var(--bg-dark);
-    color: var(--text-dark);
-}
-
-body.lightmode .navbar li a:hover {
-    background-color: var(--bg-li-lightmode-hover);
-    color: var(--bg-dark);
-}
-
-body.lightmode .btn-close {
-    background-color: transparent;
-    color: var(--btn-light);
-}
-
-body.lightmode .btn-close:hover {
-    background-color: var(--btn-dark);
-}
-
-body.lightmode .offcanvas {
-    border: 0.13rem solid var(--bg-slider);
-    border-radius: 0rem 1rem 1rem 0rem;
-}
-
-body.lightmode .offcanvas .offcanvas-footer {
-    border-top: 0.13rem solid var(--bg-slider);
-    border-radius: 0rem 0rem 1rem 0rem;
-}
-
-body.lightmode .toggle-btn .circle {
-    left: 6px;
-    background-color: #f2d421;
-}
-
-/* lightmode card component */
-body.lightmode .card .card-header {
-    background-color: var(--text-light);
     color: var(--bg-light);
 }
 
-body.lightmode .card .card-footer p a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--text-primary-color) !important;
+body.darkmode nav {
+    border-bottom: 0.13rem solid var(--bg-li-darkmode-hover);
 }
 
-body.lightmode .card .card-footer {
-    background-color: var(--bg-light);
-    border-top: 0.15rem solid var(--bg-slider) !important;
+body.darkmode .offcanvas .offcanvas-footer {
+    border-top: 0.13rem solid var(--grey-light);
+}
+
+body.darkmode .offcanvas .offcanvas-body a:hover {
+    color: var(--text-dark);
 }
 
 /* darkmode navbar */
-body.darkmode .navbar a {
-    color: var(--text-dark) !important;
-
+body.darkmode .navbar a,
+body.darkmode .navbar svg,
+body.darkmode .btn-close {
+    color: var(--btn-dark-2);
 }
 
 body.darkmode .navbar li a:hover {
     background-color: var(--bg-li-darkmode-hover);
 }
 
-body.darkmode .navbar svg {
-    color: var(--text-dark) !important;
-}
-
-body.darkmode .btn-close {
-    background-color: transparent;
-    color: var(--btn-dark-2);
-}
-
 body.darkmode .btn-close:hover {
     background-color: var(--btn-light);
 }
 
-body.darkmode nav .navbar-toggler {
-    border-color: var(--text-dark);
-    color: var(--text-dark);
-}
-
-body.darkmode .footer,
-body.darkmode .offcanvas,
-body.darkmode .offcanvas-body {
-    background-color: var(--bg-dark-2);
-}
-
-body.darkmode .offcanvas{
-    border-radius: 0rem 1rem 1rem 0rem;
-}
-
-body.darkmode .offcanvas .offcanvas-footer {
-    border-top: 0.13rem solid var(--bg-li-darkmode-hover);
-    border-radius: 0rem 0rem 1rem 0rem;
-}
-
+/* darkmode-toggler */
 body.darkmode .toggle-btn {
     background-color: var(--bg-darkmode-toggler-btn);
 }
 
 body.darkmode .toggle-btn .circle {
     left: 10px;
-    background-color: #3c3c3c;
+    background-color: var(--text-light);
     transform: translateX(2.7rem);
 }
 
-/*darkmode card component*/
-body.darkmode .card .card-header {
-    background-color: var(--bg-dark);
-    color: var(--bg-light);
-}
-
-body.darkmode .card .card-body {
-    background-color: var(--bg-dark-2);
-}
-
-body.darkmode .card .card-footer {
-    background-color: var(--bg-dark-2);
-    color: var(--bg-light);
-}
-
-body.darkmode .card .card-footer p a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--text-primary-color) !important;
-}
-
-/* darmode forms */
-body.darkmode .form-group input {
-    background-color: var(--bg-dark-2);
-    color: var(--bg-slider);
-    caret-color: var(--bg-slider) !important;
-}
-
-body.darkmode .form-group input:focus {
-    background-color: var(--bg-dark-2);
-    color: var(--bg-slider);
-}
-
-body.darkmode .floating-label-text {
+/* darkmode forms */
+body.darkmode .form-group input,
+body.darkmode form .form-group,
+body.darkmode .floating-label-text,
+body.darkmode .form-group input:focus{
+    border-color: var(--bg-secondary);
     background-color: var(--bg-dark-2) !important;
-    color: var(--bg-slider) !important;
+    color: var(--grey-light);
 }
 
-/* Estilo genérico para autofill darkmode */
+body.darkmode form .is-valid {
+    border-color: var(--bg-secondary) !important;
+}
+
+/* darkmode tooltips */
+body.darkmode .tooltip-inner {
+    max-width: 20rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    background-color: var(--bg-light) !important;
+    color: var(--text-light);
+}
+
+body.darkmode .tooltip.top > .tooltip-arrow {
+    color: var(--bg-light) !important;
+}
+
+body.darkmode .tooltip.bs-tooltip-top .tooltip-arrow::before {
+    border-top-color: var(--bg-light) !important;
+    border-top-width: 0.6rem;
+}
+
+body.darkmode .tooltip.bs-tooltip-bottom .tooltip-arrow::before {
+    border-bottom-color: var(--bg-light) !important;
+    border-bottom-width: 0.6rem;
+}
+
+body.darkmode .tooltip.bs-tooltip-start .tooltip-arrow::before {
+    border-left-color: var(--bg-light) !important;
+    border-left-width: 0.6rem;
+}
+
+body.darkmode .tooltip.bs-tooltip-end .tooltip-arrow::before {
+    border-right-color: var(--bg-light) !important;
+    border-right-width: 0.6rem;
+}
+
+/* Autofill Styles for Dark Mode */
 body.darkmode input:-webkit-autofill,
-body.darkmode input:-webkit-autofill:hover,
-body.darkmode input:-webkit-autofill:focus,
 body.darkmode textarea:-webkit-autofill,
-body.darkmode textarea:-webkit-autofill:hover,
-body.darkmode textarea:-webkit-autofill:focus,
-body.darkmode select:-webkit-autofill,
-body.darkmode select:-webkit-autofill:hover,
-body.darkmode select:-webkit-autofill:focus {
-    -webkit-text-fill-color: var(--text-dark) !important; /* Define a cor do texto */
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; /* Remove o fundo */
+body.darkmode select:-webkit-autofill {
+    -webkit-text-fill-color: var(--text-dark) !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
     transition: background-color 5000s ease-in-out 0s;
 }

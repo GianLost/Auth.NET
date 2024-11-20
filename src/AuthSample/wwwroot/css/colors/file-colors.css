@@ -1,21 +1,29 @@
 ﻿:root {
+    --blue-light-primary: #0056b3;
+    --blue-light-secondary: #5A9BD4;
+    --blue-light-hover: #003c7e;
+    --blue-dark-primary: #5AC8FA;
+    --blue-dark-secondary: #86DFFB;
+    --blue-dark-hover: #3798CE;
+    --blue-dark-hover-2: #3798ced8;
+    --grey-light: #c1c1c1d9;
     --bg-light: #fff;
-    --bg-light-2: #e9eef6;
+    --bg-light-2: #c3e7ff65;
     --bg-dark: #010409;
     --bg-dark-2: #151b23;
     --bg-secondary: #6c747e;
     --bg-slider: #cdcdcd;
     --text-light: #3c3c3c;
     --text-dark: #cdcdcd;
-    --btn-light: #3c3c3c79;
+    --btn-light: #3c3c3c92;
     --btn-light-hover: #010409b3;
-    --btn-dark: #cdcdcda5;
+    --btn-dark: #cdcdcd8c;
     --btn-green: #238636;
     --btn-green-hover: #238636b2;
-    --bg-li-lightmode-hover: #cdcdcd7a;
+    --bg-li-lightmode-hover: #cdcdcd53;
     --bg-li-darkmode-hover: #cdcdcd1c;
     --bg-lightmode-toggler-btn: #1a1562f2;
     --bg-darkmode-toggler-btn: #ff98007f;
-    --text-primary-color: #1e76bd;
+    --bg-lightmode-toggle-circle: #f2d421;
     --danger-color: #dc3546c1;
 }

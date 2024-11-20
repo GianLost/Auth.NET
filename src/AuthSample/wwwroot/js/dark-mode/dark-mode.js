@@ -1,12 +1,12 @@
 ﻿$(() => {
     function applySavedTheme() {
-        const theme = localStorage.getItem('theme'); // Recupera a preferência de tema
+        const theme = localStorage.getItem('theme'); // Retrieves theme preference
 
         if (theme) {
-            // Se o tema estiver salvo, aplica o tema correspondente
+            // If the theme was saved, apply the corresponding theme
             $('body').addClass(theme);
         } else {
-            // Caso não haja preferência salva, verifica o sistema
+            // If there is no saved preference, check the system preferences
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                 $('body').addClass('darkmode');
             } else {
@@ -15,20 +15,20 @@
         }
     }
 
-    // Função para alternar o tema
+    // Function to switch the theme
     function toggleTheme() {
         if ($('body').hasClass('darkmode')) {
             $('body').removeClass('darkmode').addClass('lightmode');
-            localStorage.setItem('theme', 'lightmode'); // Salva a preferência
+            localStorage.setItem('theme', 'lightmode'); // Save the preference
         } else {
             $('body').removeClass('lightmode').addClass('darkmode');
-            localStorage.setItem('theme', 'darkmode'); // Salva a preferência
+            localStorage.setItem('theme', 'darkmode'); // Save the preference
         }
     }
 
-    // Aplica o tema salvo quando a página carregar
+    // Aplica o tema salvo quando a página carrega
     applySavedTheme();
 
-    // Adiciona o evento de clique no botão para alternar o tema
+    // Add button click event to switch theme
     $('#theme-toggle').on('click', toggleTheme);
 });

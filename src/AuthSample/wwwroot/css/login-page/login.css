@@ -1,24 +1,53 @@
 @import url("../colors/file-colors.css");
 
-#login-form {
-    max-width: 25rem;
+/* Login container style */
+.container-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
-#login-form input{
+.container-login .card {
+    border-radius: 1rem;
+    background-color: transparent;
+    width: 100%;
+    min-width: 16rem;
+    max-width: 33rem;
+}
+
+.container-login form {
+    padding: 0 0.75rem;
+}
+
+.container-login form input {
+    padding: 1rem;
+    margin: 1.1rem 0;
+    width: 100%;
+}
+
+.container-login form button {
+    padding: 0.75rem;
+    border-radius: 6px;
     margin: 1rem 0;
 }
 
-#login-card .card-body {
-    padding: 2rem 3rem;
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container-login .card {
+        min-width: 18rem;
+    }
 }
 
-#login-form button {
-    padding: 0.75rem;
-    border-radius: 6px;
-    margin-top: 0.75rem;
-}
+@media (max-width: 576px) {
+    .container-login .card {
+        min-width: 16rem;
+    }
 
-#login-form .bi-eye-slash-fill,
-.bi-eye-fill {
-    right: 1.4rem;
+    /* Adjust form element spacing for smaller screens */
+    .container-login form input,
+    .container-login form button {
+        margin: 0.75rem 0;
+    }
 }

@@ -1,7 +1,5 @@
-﻿// Arquivo responsável por conter todas as declarações de elementos para utilização das funções de animação;
+﻿// File responsible for containing all constants declarations for using animation functions
 
-// Elementos para a página de login;
+// const forms
 export const loginPasswordInput = $(".input-password");
 export const loginTogglePasswordButton = $(".toggle-password");
-
-/*export const iconLogin = $(".door");*/

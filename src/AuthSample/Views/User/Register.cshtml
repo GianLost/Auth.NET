@@ -7,6 +7,10 @@
 
 <div class="container forms">
 
+    @* <div class="alert">
+        <!-- space for component of alert messages... -->
+    </div> *@
+
     <div class="card col-md-8">
 
         <div class="card-body">
@@ -15,21 +19,21 @@
 
                 <div class="row">
 
-                    <!-- Campo Nome -->
+                    <!-- full name field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="text" class="form-control" id="name" name="Name" data-validation-rules="required, min-length" data-min-length="6" autocomplete="Name" required>
-                            <label for="name" class="floating-label-text">Nome completo</label>
+                            <label for="name" class="floating-label-text">Full name: </label>
                             <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
 
-                    <!-- Campo Login -->
+                    <!-- username field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="text" class="form-control" id="login" name="Login" data-validation-rules="required, min-length" data-min-length="6" autocomplete="UserName" required>
-                            <label for="login" class="floating-label-text">Login</label>
-                            <div class="invalid-tooltip"><span>)</span></div>
+                            <label for="login" class="floating-label-text">Username: </label>
+                            <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
 
@@ -37,20 +41,20 @@
 
                 <div class="row">
 
-                    <!-- Campo Email -->
+                    <!-- email address field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="email" class="form-control" id="email" name="Email" data-validation-rules="required, pattern" maxlength="100" data-pattern="@ConstExpressions.EmailRegex.Trim()" autocomplete="Email" required>
-                            <label for="email" class="floating-label-text">Email</label>
+                            <label for="email" class="floating-label-text">Email address: </label>
                             <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
 
-                    <!-- Campo Confirmar Email -->
+                    <!-- confirm email address field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="email" class="form-control" id="confirm-email" data-validation-rules="required, confirm-email, pattern" data-pattern="@ConstExpressions.EmailRegex.Trim()" data-confirm-email-for="email" maxlength="100" name="ConfirmEmail" autocomplete="Email" required />
-                            <label for="confirm-email" class="floating-label-text">Confirme seu email</label>
+                            <label for="confirm-email" class="floating-label-text">Confirm your email address: </label>
                             <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
@@ -59,22 +63,22 @@
 
                 <div class="row">
 
-                    <!-- Campo Senha -->
+                    <!-- password field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="password" class="form-control input-password" id="password" name="Password" data-validation-rules="required, pattern" minlength="8" data-pattern="@ConstExpressions.StrongPasswordRegex.Trim()" data-error-message="@ErrorMessages.MsgPasswordRegex.Trim()" autocomplete="new-password" required>
-                            <label for="password" class="floating-label-text">Sua senha</label>
-                            <i data-bs-toggle="tooltip" data-bs-placement="right" title="Exibir senha ..." class="bi bi-eye-slash-fill toggle-password"></i>
+                            <label for="password" class="floating-label-text">Password: </label>
+                            <button type="button" class="btn toggle-password bi bi-eye-slash-fill" aria-label="show password" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to show password"></button>
                             <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
 
-                    <!-- Campo Confirmar Senha -->
+                    <!-- confirm password field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="password" class="form-control input-password" id="confirm-password" data-validation-rules="required, confirm-password" data-confirm-password-for="password" minlength="8" name="ConfirmPassword" autocomplete="current-password" required />
-                            <label for="confirm-password" class="floating-label-text">Confirme sua senha</label>
-                            <i data-bs-toggle="tooltip" data-bs-placement="right" title="Exibir senha ..." class="bi bi-eye-slash-fill toggle-password"></i>
+                            <label for="confirm-password" class="floating-label-text">Confirm your password: </label>
+                            <button type="button" class="btn toggle-password bi bi-eye-slash-fill" aria-label="show password" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to show password"></button>
                             <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
@@ -83,18 +87,18 @@
 
                 <div class="row">
 
-                    <!-- Campo Celular -->
+                    <!-- cellphone field -->
                     <div class="col-md-6 form-group floating-label">
                         <div class="position-relative">
                             <input type="tel" class="form-control" maxlength="15" id="cellPhone" name="CellPhone" data-validation-rules="required, pattern" data-pattern="@ConstExpressions.PhoneNumberRegex.Trim()" autocomplete="tel" required>
-                            <label for="cellPhone" class="floating-label-text">Telefone (XX) XXXXX-XXXX</label>
+                            <label for="cellPhone" class="floating-label-text">Cellphone (XX) XXXXX-XXXX </label>
                             <div class="invalid-tooltip"><span></span></div>
                         </div>
                     </div>
 
-                    <!-- Botão de Envio -->
+                    <!-- register button -->
                     <div class="w-100 col-md-12">
-                        <button type="submit" class="btn btn-block btn-green" data-bs-toggle="tooltip" data-bs-placement="right" title="Clique para cadastrar o usuário ...">Sign up</button>
+                        <button type="submit" class="btn btn-block btn-green" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to register user">Sign up</button>
                     </div>
 
                 </div>

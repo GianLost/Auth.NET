@@ -1,6 +1,6 @@
 @import url("../colors/file-colors.css");
 
-/* Estilos globais */
+/* Navbar links */
 .navbar li a {
     border-radius: 0.3rem;
     display: flex;
@@ -13,13 +13,18 @@
     margin-right: 0.5rem !important;
 }
 
-/* Ícones do Navbar */
+/* navbar icons */
 nav svg{
     width: 10rem;
     color: var(--text-light);
 }
 
-/* Botão de fechar */
+/* offcanvas style */
+.offcanvas{
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+
+/* Close button */
 .btn-close {
     display: flex;
     align-items: center;
@@ -27,7 +32,7 @@ nav svg{
     width: 1.5rem;
     height: 1.5rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 0.37rem;
     padding: 0;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
@@ -38,26 +43,30 @@ nav .btn-close svg {
     height: 16px;
 }
 
+/* Toggle navbar styles */
 nav .navbar-toggler {
     display: flex;
     align-items: center;
     max-width: 2.5rem;
     height: 1.8rem;
     padding: 0.5rem;
+    border: 0.15rem solid var(--bg-secondary);
+    color: var(--bg-secondary);
 }
 
 nav .navbar-toggler svg{
     min-width: 100%;
+    height: auto;
 }
 
+/* Offcanvas image */
 .offcanvas-header a img {
     border: 0.1rem solid var(--bg-slider);
     border-radius: 0.3rem;
 }
 
-/* Estilos para o botão de alternância */
+/* toggle button styles */
 .toggle-btn {
-    background: none;
     border: none;
     cursor: pointer;
     padding: 0;
@@ -66,7 +75,6 @@ nav .navbar-toggler svg{
     height: 2.5rem;
     border-radius: 2rem;
     transition: background-color 0.3s;
-    background-color: var(--bg-lightmode-toggler-btn);
 }
 
 .toggle-btn .slider {

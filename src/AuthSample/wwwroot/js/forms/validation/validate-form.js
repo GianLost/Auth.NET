@@ -1,7 +1,7 @@
 ﻿//import { encryptData } from '../cryptography/dataCrypt.js';
 import { applyPhoneMask } from '../../components/masks.js';
 
-// Constantes para as regras de validação
+// Constants for validation rules
 const VALIDATION_RULES = {
     REQUIRED: 'required',
     MIN_LENGTH: 'min-length',
@@ -10,30 +10,30 @@ const VALIDATION_RULES = {
     CONFIRM_PASSWORD: 'confirm-password',
 };
 
-// Constantes para mensagens de erro
+// Constants for error messages
 const MESSAGES = {
-    REQUIRED: 'Este campo é obrigatório !',
-    INVALID_FORMAT: 'Campo com formato inválido !',
-    EMAIL_MISMATCH: 'Os e-mails são diferentes !',
-    PASSWORD_MISMATCH: 'As senhas são diferentes !'
+    REQUIRED: 'This field is required !',
+    INVALID_FORMAT: 'Invalid format field !',
+    EMAIL_MISMATCH: 'The emails are different !',
+    PASSWORD_MISMATCH: 'The passwords are different !'
 };
 
-// Constantes de chaves de criptografia
+// Constants for encryption keys
 const ENCRYPTION_KEYS = {
     KEY: new TextEncoder().encode("character-key0@55YssY??-&&36A9W="),
     IV: new TextEncoder().encode("char-iv1=Key00?#"),
 };
 
-// Objeto FormValidator responsável pela validação dos campos do formulário
+// FormValidator object responsible for validating form fields
 const FormValidator = {
-    // Função para validar um campo dinamicamente
+    // Function to dynamically validate an input field
     validateInputDynamically(input) {
-        // Obtém as regras de validação do dataset do input
+        // Get the validation rules from the input's dataset
         const validationRules = (input.dataset.validationRules || '').split(',').map(rule => rule.trim());
         const feedbackDiv = input.parentElement.querySelector('.invalid-tooltip');
         let errorMessage = '';
 
-        // Itera sobre as regras de validação e verifica cada uma
+        // Iterate over the validation rules and check each one
         validationRules.some(rule => {
             switch (rule) {
                 case VALIDATION_RULES.REQUIRED:
@@ -44,7 +44,7 @@ const FormValidator = {
                 case VALIDATION_RULES.MIN_LENGTH:
                     const minLength = parseInt(input.dataset.minLength, 10);
                     if (input.value.trim().length < minLength) {
-                        errorMessage = input.dataset.errorMessage || `Requer pelo menos ${minLength} caracteres !`;
+                        errorMessage = input.dataset.errorMessage || `Requires at least ${minLength} characters !`;
                     }
                     break;
                 case VALIDATION_RULES.PATTERN:
@@ -69,7 +69,7 @@ const FormValidator = {
             return !!errorMessage;
         });
 
-        // Exibe a mensagem de erro ou sucesso de acordo com o resultado da validação
+        // Display the error or success message based on validation result
         if (errorMessage) {
             this.showValidationError(input, feedbackDiv, errorMessage);
         } else {
@@ -77,7 +77,7 @@ const FormValidator = {
         }
     },
 
-    // Função para mostrar mensagem de erro
+    // Function to show an error message
     showValidationError(input, feedbackDiv, errorMessage) {
         input.classList.add('is-invalid');
         input.classList.remove('is-valid');
@@ -85,20 +85,20 @@ const FormValidator = {
         feedbackDiv.style.display = 'block';
     },
 
-    // Função para mostrar validação bem-sucedida
+    // Function to show validation success
     showValidationSuccess(input, feedbackDiv) {
         input.classList.remove('is-invalid');
         input.classList.add('is-valid');
         feedbackDiv.textContent = '';
         feedbackDiv.style.display = 'none';
 
-        // Adiciona este bloco para remover a div se estiver vazia
+        // Add this block to remove the div if it is empty
         if (feedbackDiv.textContent.trim() === '') {
             feedbackDiv.style.display = 'none';
         }
     },
 
-    // Função para limpar todas as mensagens de erro
+    // Function to clear all error messages
     clearErrorMessages(form) {
         form.querySelectorAll('.invalid-tooltip').forEach(div => {
             div.textContent = '';
@@ -107,9 +107,9 @@ const FormValidator = {
     }
 };
 
-// Objeto FormHandler responsável pela manipulação e submissão do formulário
+// FormHandler object responsible for form manipulation and submission
 const FormHandler = {
-    // Função para lidar com a submissão do formulário
+    // Function to handle form submission
     async handleFormSubmit(event) {
         event.preventDefault();
 
@@ -119,7 +119,7 @@ const FormHandler = {
         let firstInvalidInput = null;
         let isFormValid = true;
 
-        // Valida cada input dinamicamente
+        // Validate each input dynamically
         inputs.forEach(input => {
             FormValidator.validateInputDynamically(input);
             if (input.classList.contains('is-invalid') && !firstInvalidInput) {
@@ -128,20 +128,20 @@ const FormHandler = {
             }
         });
 
-        // Se algum campo estiver inválido, impede a submissão e foca no primeiro campo inválido
+        // If any field is invalid, prevent submission and focus on the first invalid field
         if (!isFormValid) {
             firstInvalidInput.focus();
         } else {
-            // Se o formulário for válido, criptografa os dados e envia
+            // If the form is valid, encrypt the data and submit it
             let formData = {};
             inputs.forEach(input => {
                 formData[input.name] = input.value;
             });
 
-            // Criptografa os dados do formulário
+            // Encrypt the form data
             const encryptedData = await encryptData(formData, ENCRYPTION_KEYS.KEY, ENCRYPTION_KEYS.IV);
 
-            // Cria um campo de input oculto para armazenar os dados criptografados
+            // Create a hidden input field to store the encrypted data
             let encryptedInput = form.querySelector('input[name="userEncrypted"]');
             if (!encryptedInput) {
                 encryptedInput = document.createElement('input');
@@ -152,15 +152,15 @@ const FormHandler = {
 
             encryptedInput.value = encryptedData;
 
-            // Desabilita os campos originais para não enviar dados não criptografados
+            // Disable the original fields to prevent sending unencrypted data
             inputs.forEach(input => input.disabled = true);
 
-            // Submete o formulário
+            // Submit the form
             form.submit();
         }
     },
 
-    // Função para inicializar a validação de um formulário
+    // Function to initialize form validation
     initializeFormValidation(form) {
         form.addEventListener('submit', this.handleFormSubmit.bind(this));
         form.querySelectorAll('input').forEach(input => {
@@ -173,17 +173,17 @@ const FormHandler = {
                     FormValidator.showValidationError(input, feedbackDiv, feedbackDiv.textContent);
                 }
             });
-            // Aplica máscara de telefone se o tipo do input for 'tel'
+            // Apply phone mask if the input type is 'tel'
             if (input.getAttribute('type') === 'tel') {
                 input.addEventListener('input', applyPhoneMask);
             }
         });
     },
 
-    // Função para inicializar a validação de todos os formulários na página
+    // Function to initialize validation for all forms on the page
     initialize() {
 
-        // Esconde todas as divs .invalid-tooltip vazias ao carregar a página
+        // Hide all empty .invalid-tooltip divs when the page loads
         document.querySelectorAll('.invalid-tooltip').forEach(div => {
             if (div.textContent.trim() === '') {
                 div.style.display = 'none';
@@ -195,7 +195,7 @@ const FormHandler = {
             this.initializeFormValidation(form);
         });
 
-        // Adiciona eventos de input aos campos de e-mail e confirmar e-mail para validar dinamicamente
+        // Add input events to email fields and confirm email fields to validate dynamically
         document.querySelectorAll('input[type="email"]').forEach(input => {
             const confirmInput = document.getElementById(input.dataset.confirmEmailFor);
             if (confirmInput) {
@@ -212,7 +212,7 @@ const FormHandler = {
             }
         });
 
-        // Adiciona eventos de input aos campos de senha e confirmar senha para validar dinamicamente
+        // Add input events to password fields and confirm password fields to validate dynamically
         document.querySelectorAll('input[type="password"]').forEach(input => {
             const confirmInput = document.getElementById(input.dataset.confirmPasswordFor);
             if (confirmInput) {
@@ -231,7 +231,7 @@ const FormHandler = {
     }
 };
 
-// Inicializa a validação de todos os formulários quando o DOM estiver totalmente carregado
+// Initialize form validation for all forms once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     FormHandler.initialize();
 });

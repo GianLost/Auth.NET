@@ -1,17 +1,12 @@
 ﻿@import url("../colors/file-colors.css");
 
-.forms {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 1rem;
+/* Form validation styles */
+form .is-invalid {
+    border-color: var(--blue-dark-hover) !important;
 }
 
-.forms input {
-    margin: 1.3rem 0;
+form .is-valid {
+    border-color: var(--grey-light) !important;
 }
 
 form .form-control:invalid,
@@ -19,37 +14,57 @@ form .form-control:valid {
     box-shadow: none !important;
 }
 
-.form-group input {
-    width: 100%;
-    border: 0.15rem solid;
-    color: var(--text-light);
-    caret-color: var(--text-light) !important;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    border-radius: 6px;
+/* Form global styles */
+.forms {
+    display: flex;
+    justify-content: center;
+    margin: 5rem auto 6rem auto;
 }
 
+.forms input {
+    margin: 1.1rem 0;
+}
+
+/* Inputs form-group */
+.form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 0.15rem solid;
+    border-radius: 0.5rem;
+    color: var(--text-light);
+    box-sizing: border-box;
+}
+
+/* Float label style */
 .floating-label-text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: 50%;
-    padding: 1rem;
     transform: translateY(-50%);
 }
 
+/* Global card style */
 .card {
-    border: 2px solid var(--bg-secondary);
     border-radius: 0.8rem;
     overflow: hidden;
 }
 
 .card .card-body {
-    padding: 2rem 2.5rem;
+    padding: 2rem;
 }
 
 .card .card-header {
+    border: none;
+    background-color: var(--bg-dark-2);
     text-align: center;
-    padding: 1.5rem 1rem;
+}
+
+.card .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.card .card-footer p{
+    margin: 0%;
 }

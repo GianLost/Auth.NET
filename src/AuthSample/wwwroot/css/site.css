@@ -1,11 +1,11 @@
 @import url("../css/colors/file-colors.css");
 
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
-    text-align: inherit;
 }
 
 html, body {
@@ -16,10 +16,17 @@ html, body {
     font-size: 0.9rem;
 }
 
-body {
-    align-items: center;
+html body a {
+    text-decoration: none;
+    font-weight: bold;
 }
 
+body {
+    align-items: center;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Footer */
 .footer {
     display: flex;
     align-items: center;
@@ -29,15 +36,9 @@ body {
     width: 100%;
     height: 4.5rem;
     text-align: center;
-    border-top:1px solid var(--bg-slider);
 }
 
-.footer a {
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--text-primary-color);
-}
-
+/* Buttons */
 .btn {
     display: flex;
     align-items: center;
@@ -62,16 +63,10 @@ button:active {
     outline: none;
 }
 
-/* Estilo genérico para autofill */
+/* Autofill Styles */
 input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; /* Remove o fundo */
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
     transition: background-color 5000s ease-in-out 0s;
 }

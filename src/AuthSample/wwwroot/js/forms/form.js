@@ -36,11 +36,11 @@ function handleBlur(event) {
     styleLabel(label, input.value.trim() !== '');
 }
 
-// Adiciona os eventos de foco e blur aos inputs
+// Add focus and blur events to inputs
 document.querySelectorAll('.form-group input').forEach(input => {
     input.addEventListener('focus', handleFocus);
     input.addEventListener('blur', handleBlur);
 });
 
-// Atualiza a posição dos labels após o carregamento da página
+// Atualiza a posição dos rótulos após o carregamento da página
 window.addEventListener('load', updateLabelPositions);
