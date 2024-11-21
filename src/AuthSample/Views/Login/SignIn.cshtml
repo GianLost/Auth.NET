@@ -5,7 +5,7 @@
 <div class="container-login">
 
     @* <div class="alert">
-        <!-- space for component of alert messages... -->
+        <!-- space for alert messages component... -->
     </div> *@
 
     <div class="card">
@@ -16,24 +16,24 @@
                 <h1>Sign in</h1>
             </div>
 
-            <form id="login-form" asp-controller="" asp-action="" method="post" class="needs-validation" novalidate>
+            <form asp-controller="" asp-action="" method="post" class="needs-validation" novalidate>
 
                 <div class="row">
 
                     <!-- username field -->
-                    <div class="col-md-12 form-group floating-label">
+                    <div class="form-group floating-label">
                         <div class="position-relative">
-                            <input class="form-control" id="login-name" autocomplete="off" name="Login" data-validation-rules="required, min-length" data-min-length="6" required>
-                            <label for="login-name" class="floating-label-text">Enter your username:</label>
+                            <input class="form-control" id="signin-username" autocomplete="username" name="username" data-validation-rules="required, min-length" data-min-length="6" required>
+                            <label for="signin-username" class="floating-label-text">Enter your username:</label>
                             <div class="invalid-tooltip"></div>
                         </div>
                     </div>
 
                     <!-- password field -->
-                    <div class="col-md-12 form-group floating-label">
+                    <div class="form-group floating-label">
                         <div class="position-relative">
-                            <input class="form-control" id="login-password" type="password" autocomplete="off" name="Password" data-validation-rules="required, pattern, min-length" data-min-length="8" aria-describedby="password-description" required>
-                            <label for="login-password" class="floating-label-text">Enter your password:</label>
+                            <input class="form-control" id="signin-password" type="password" autocomplete="current-password" name="password" data-validation-rules="required, pattern, min-length" data-min-length="8" aria-describedby="password-description" required>
+                            <label for="signin-password" class="floating-label-text">Enter your password:</label>
                             <button type="button" class="btn toggle-password bi bi-eye-slash-fill" aria-label="show password" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to show password"></button>
                             <div class="invalid-tooltip"></div>
                         </div>
@@ -41,17 +41,17 @@
 
                 </div>
 
-                <div class="col-md-12 d-flex flex-column">
-                    <button type="submit" class="btn btn-green" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to sign in">Sign in</button>
+                <div class="d-flex flex-column">
+                    <button type="submit" class="btn btn-green" aria-label="sign in here" data-bs-toggle="tooltip" data-bs-placement="right" title="Click to sign in">Sign in</button>
                 </div>
 
             </form>
 
             <!-- card footer -->
             <div class="card-footer d-flex flex-column">
-                <p>Can't you sign in? <a href="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to change your password."> Change your password</a>.</p>
+                <p>Can't you sign in? <a href="#" aria-label="Click here to reset your password" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to change your password."> Change your password</a>.</p>
                 <p>or</p>
-                <p>try other ways to <a href="" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign in whith other account.">sign in</a>!</p>
+                <p>try other ways to <a href="#" aria-label="Click here to sign in with other ways" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Sign in whith other account.">sign in</a>!</p>
             </div>
 
         </div>
