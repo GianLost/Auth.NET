@@ -36,11 +36,21 @@ function handleBlur(event) {
     styleLabel(label, input.value.trim() !== '');
 }
 
-// Add focus and blur events to inputs
-document.querySelectorAll('.form-group input').forEach(input => {
-    input.addEventListener('focus', handleFocus);
-    input.addEventListener('blur', handleBlur);
-});
+// Função para inicializar os eventos de foco e desfoque
+function initializeForm() {
+    // Adiciona os eventos de focus e blur aos inputs
+    document.querySelectorAll('.form-group input').forEach(input => {
+        input.addEventListener('focus', handleFocus);
+        input.addEventListener('blur', handleBlur);
+    });
 
-// Atualiza a posição dos rótulos após o carregamento da página
-window.addEventListener('load', updateLabelPositions);
+    // Atualiza a posição dos rótulos após o carregamento da página
+    window.addEventListener('load', updateLabelPositions);
+}
+
+// Exportando a função initializeForm para ser utilizada em outros arquivos
+const form = {
+    initialize: initializeForm
+};
+
+export { form };

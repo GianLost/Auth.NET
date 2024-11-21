@@ -127,17 +127,7 @@
     <!-- standard js -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    <!-- custom js -->
-    <script type="module" src="~/js/animation/toggle-password-visibility.js" asp-append-version="true"></script>
-    <script type="module" src="~/js/forms/validation/validate-form.js" asp-append-version="true"></script>
-    <script src="~/js/components/tooltip.js" asp-append-version="true"></script>
-    <script src="~/js/components/alert.js" asp-append-version="true"></script>
-    <script src="~/js/forms/form.js" asp-append-version="true"></script>
-
-    <!-- dark-mode js -->
-    <script src="~/js/dark-mode/dark-mode.js" asp-append-version="true" defer></script>
+    <script type="module" src="~/js/app.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 

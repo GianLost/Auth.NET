@@ -1,34 +1,39 @@
-﻿$(() => {
-    function applySavedTheme() {
-        const theme = localStorage.getItem('theme'); // Retrieves theme preference
+﻿import { BODY, THEME_TOGGLE_BUTTON, THEME_STORAGE_KEY, DARK_MODE_CLASS, LIGHT_MODE_CLASS } from "../constants/components-constant.js";
 
-        if (theme) {
-            // If the theme was saved, apply the corresponding theme
-            $('body').addClass(theme);
-        } else {
-            // If there is no saved preference, check the system preferences
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                $('body').addClass('darkmode');
-            } else {
-                $('body').addClass('lightmode');
-            }
-        }
+// Aplica o tema salvo ou o tema do sistema
+function applySavedOrSystemTheme() {
+    const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+
+    if (savedTheme) {
+        BODY.classList.add(savedTheme);
+    } else {
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        BODY.classList.add(prefersDarkMode ? DARK_MODE_CLASS : LIGHT_MODE_CLASS);
     }
+}
 
-    // Function to switch the theme
-    function toggleTheme() {
-        if ($('body').hasClass('darkmode')) {
-            $('body').removeClass('darkmode').addClass('lightmode');
-            localStorage.setItem('theme', 'lightmode'); // Save the preference
-        } else {
-            $('body').removeClass('lightmode').addClass('darkmode');
-            localStorage.setItem('theme', 'darkmode'); // Save the preference
-        }
+// Alterna entre os temas e salva a preferência
+function toggleTheme() {
+    if (BODY.classList.contains(DARK_MODE_CLASS)) {
+        BODY.classList.replace(DARK_MODE_CLASS, LIGHT_MODE_CLASS);
+        localStorage.setItem(THEME_STORAGE_KEY, LIGHT_MODE_CLASS);
+    } else {
+        BODY.classList.replace(LIGHT_MODE_CLASS, DARK_MODE_CLASS);
+        localStorage.setItem(THEME_STORAGE_KEY, DARK_MODE_CLASS);
     }
+}
 
-    // Aplica o tema salvo quando a página carrega
-    applySavedTheme();
+// Função para inicializar o modo escuro
+export function initializeDarkMode() {
+    applySavedOrSystemTheme();
 
-    // Add button click event to switch theme
-    $('#theme-toggle').on('click', toggleTheme);
+    // Verifica se o botão de alternância de tema existe antes de adicionar o evento
+    if (THEME_TOGGLE_BUTTON.length) {
+        THEME_TOGGLE_BUTTON[0].addEventListener('click', toggleTheme);
+    }
+}
+
+// Inicializa o Dark Mode após o DOM estar pronto
+$(() => {
+    initializeDarkMode();
 });
