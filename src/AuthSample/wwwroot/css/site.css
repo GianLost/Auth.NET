@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: arial;
 }
 
 html, body {
@@ -18,7 +18,7 @@ html, body {
 
 html body a {
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1rem;
 }
 
 body {

@@ -64,6 +64,7 @@ nav .navbar-toggler svg{
 .offcanvas-header a img {
     border: 0.1rem solid var(--bg-slider);
     border-radius: 0.3rem;
+    width: 2.5rem;
 }
 
 /* toggle button styles */
