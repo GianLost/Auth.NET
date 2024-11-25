@@ -25,6 +25,10 @@ nav svg{
     border-radius: 0rem 1rem 1rem 0rem;
 }
 
+.btn {
+    padding: 0.4rem;
+}
+
 /* Close button */
 .btn-close {
     display: flex;
@@ -102,4 +106,28 @@ nav .navbar-toggler svg{
     height: 1.7rem;
     border-radius: 50%;
     transition: all 0.3s;
+}
+
+@media (max-width: 480px) {
+    .toggle-btn {
+        width: 5.6rem;
+    }
+
+    .toggle-btn .circle {
+        top: 0.35rem;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .toggle-btn {
+        width: 6rem;
+    }
+
+    .toggle-btn .circle {
+        top: 0.35rem;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
 }
