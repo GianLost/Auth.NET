@@ -1,23 +1,29 @@
 ﻿import { loginPasswordInput, loginTogglePasswordButton } from "../constants/components-constant.js";
 
-function togglePasswordVisibility() {
-    const toggleButtons = $(loginTogglePasswordButton);
+// Function to handle dynamic password visibility
+function handlePasswordVisibility(event, isVisible) {
+    const toggleButton = $(event.currentTarget);
+    const passwordInput = toggleButton.siblings(loginPasswordInput);
 
-    toggleButtons.on('mousedown touchstart', function () {
-        const toggleButton = $(this);
-        const passwordInput = toggleButton.siblings(loginPasswordInput);
-        passwordInput.attr('type', 'text');
-        toggleButton.removeClass('bi-eye-slash-fill').addClass('bi-eye-fill');
+    if (!passwordInput.length) return;
+
+    // Toggle password visibility and update icon
+    passwordInput.attr("type", isVisible ? "text" : "password");
+    toggleButton
+        .toggleClass("bi-eye-fill", isVisible)
+        .toggleClass("bi-eye-slash-fill", !isVisible);
+}
+
+// Initialize the event listeners
+function initializeTogglePassword() {
+    loginTogglePasswordButton.on("mousedown touchstart", function (event) {
+        handlePasswordVisibility(event, true);
     });
 
-    toggleButtons.on('mouseup touchend mouseleave', function () {
-        const toggleButton = $(this);
-        const passwordInput = toggleButton.siblings(loginPasswordInput);
-        passwordInput.attr('type', 'password');
-        toggleButton.removeClass('bi-eye-fill').addClass('bi-eye-slash-fill');
+    loginTogglePasswordButton.on("mouseup touchend mouseleave", function (event) {
+        handlePasswordVisibility(event, false);
     });
 }
 
-$(() => {
-    togglePasswordVisibility();
-});
+// Export the initialization function
+export { initializeTogglePassword };

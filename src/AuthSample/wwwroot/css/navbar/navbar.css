@@ -6,6 +6,7 @@
     display: flex;
     align-items: center;
     padding: 8px !important;
+    font-weight: normal;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -24,6 +25,10 @@ nav svg{
     border-radius: 0rem 1rem 1rem 0rem;
 }
 
+.btn {
+    padding: 0.4rem;
+}
+
 /* Close button */
 .btn-close {
     display: flex;
@@ -35,12 +40,14 @@ nav svg{
     border-radius: 0.37rem;
     padding: 0;
     cursor: pointer;
+    background: none; /* Remove estilos padrão */
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav .btn-close svg {
-    width: 16px;
-    height: 16px;
+nav .btn-close {
+    width: 18px;
+    height: 18px;
+    font-size: 2rem;
 }
 
 /* Toggle navbar styles */
@@ -63,6 +70,7 @@ nav .navbar-toggler svg{
 .offcanvas-header a img {
     border: 0.1rem solid var(--bg-slider);
     border-radius: 0.3rem;
+    width: 2.5rem;
 }
 
 /* toggle button styles */
@@ -100,4 +108,28 @@ nav .navbar-toggler svg{
     height: 1.7rem;
     border-radius: 50%;
     transition: all 0.3s;
+}
+
+@media (max-width: 480px) {
+    .toggle-btn {
+        width: 5.6rem;
+    }
+
+    .toggle-btn .circle {
+        top: 0.35rem;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .toggle-btn {
+        width: 6rem;
+    }
+
+    .toggle-btn .circle {
+        top: 0.35rem;
+        width: 1.8rem;
+        height: 1.8rem;
+    }
 }

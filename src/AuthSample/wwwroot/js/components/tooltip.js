@@ -1,12 +1,16 @@
-﻿var tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
-var tooltipList = [];
+﻿import { TOOLTIP_SELECTOR } from "../constants/components-constant.js";
 
-tooltipTriggerList.forEach(function (tooltipTriggerEl) {
-    var tooltip = new bootstrap.Tooltip(tooltipTriggerEl);
-    tooltipList.push(tooltip);
+export function initializeTooltips() {
+    const tooltipTriggerElements = document.querySelectorAll(TOOLTIP_SELECTOR);
+    const tooltips = [];
 
-    // Add a click event to hide the tooltip on click
-    tooltipTriggerEl.addEventListener('mouseleave', function () {
-        tooltip.hide();
+    tooltipTriggerElements.forEach((element) => {
+        const tooltip = new bootstrap.Tooltip(element);
+        tooltips.push(tooltip);
+
+        // Ensure tooltip hides when mouse leaves
+        element.addEventListener("mouseleave", () => tooltip.hide());
     });
-});
+
+    return tooltips;
+}
