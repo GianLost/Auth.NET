@@ -1,6 +1,7 @@
-﻿using Auth.NET.Libs.Domain;
+﻿using Auth.NET.Libs.Domain.Entities;
 
 namespace Auth.NET.Libs.Models.Users;
+
 public class TUser : TUser<string>
 {
     public TUser()

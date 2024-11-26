@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Auth.NET.Libs.Domain;
+namespace Auth.NET.Libs.Domain.Entities;
 
 /// <summary>
 /// Abstract base class representing a generic user entity with essential fields
