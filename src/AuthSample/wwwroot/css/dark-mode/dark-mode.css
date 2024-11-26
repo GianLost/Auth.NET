@@ -148,7 +148,7 @@ body.darkmode .navbar li a:hover {
 }
 
 body.darkmode .btn-close:hover {
-    background-color: var(--btn-light);
+    background-color: var(--btn-light-2);
 }
 
 /* darkmode-toggler */

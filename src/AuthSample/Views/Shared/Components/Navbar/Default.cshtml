@@ -1,0 +1,73 @@
+﻿<!-- navbar component -->
+<nav class="navbar fixed-top p-2">
+
+    <div class="container-fluid">
+
+        <!-- menu toggle button -->
+        <button title="menu" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <svg id="toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
+        </button>
+
+        <!-- offcanvas navbar component -->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+
+            <div class="offcanvas-header">
+                <!-- navbar logo icon  -->
+                <a href="#">
+                    <img width="40" height="40" class="img-fluid" src="~/icons/favicon.png" alt="logo" />
+                </a>
+
+                <!-- offcanvas title -->
+                <span class="p-0 m-auto fs-4 fw-bold">Auth.NET</span>
+
+                <!-- navbar close button -->
+                <!-- Custom close button -->
+                <button class="btn-close m-2" type="button" title="Close" data-bs-dismiss="offcanvas" data-bs-toggle="tooltip" data-bs-placement="bottom" aria-label="Close">
+                    &times;
+                </button>
+            </div>
+
+            <hr class="m-0" />
+
+            <!-- navbar links -->
+            <div class="offcanvas-body w-100 p-auto">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i> Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy"><i class="bi bi-shield"></i> Privacy</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- offcanvas navbar footer -->
+            <div class="offcanvas-footer">
+
+                <!-- manage user links -->
+                <div class="col d-flex justify-content-start mt-3 mb-3">
+                    <a class="btn btn-sm btn-green text-light ms-3 me-3" asp-area="" asp-controller="Login" asp-action="SignIn">Sign in</a>
+                    <a class="btn btn-sm btn-secondary text-light" asp-area="" asp-controller="User" asp-action="Register">Sign up</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Light/dark mode toggle button -->
+        <div class="theme-toggle ms-3 me-3">
+            <button id="theme-toggle" class="toggle-btn">
+                <div class="slider">
+                    <span class="icon-sun">☀️</span>
+                    <span class="icon-moon">🌙</span>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </div>
+
+    </div>
+
+</nav>

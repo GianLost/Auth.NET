@@ -40,12 +40,14 @@ nav svg{
     border-radius: 0.37rem;
     padding: 0;
     cursor: pointer;
+    background: none; /* Remove estilos padrão */
     transition: background-color 0.3s, color 0.3s;
 }
 
-nav .btn-close svg {
-    width: 16px;
-    height: 16px;
+nav .btn-close {
+    width: 18px;
+    height: 18px;
+    font-size: 2rem;
 }
 
 /* Toggle navbar styles */
