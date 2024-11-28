@@ -1,4 +1,6 @@
-﻿namespace Auth.NET.Libs.Domain.Entities;
+﻿using Auth.NET.Libs.Domain.Users;
+
+namespace Auth.NET.Libs.Domain.Tokens;
 
 /// <summary>
 /// Represents a token used for authentication or authorization purposes.

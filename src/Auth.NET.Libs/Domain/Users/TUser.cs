@@ -1,6 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Auth.NET.Libs.Domain.Auditing;
+using Auth.NET.Libs.Domain.Roles;
+using Auth.NET.Libs.Domain.Tokens;
+using System.ComponentModel.DataAnnotations;
 
-namespace Auth.NET.Libs.Domain.Entities;
+namespace Auth.NET.Libs.Domain.Users;
 
 /// <summary>
 /// Represents a generic user entity with essential properties such as ID, name, 

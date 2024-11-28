@@ -1,6 +1,6 @@
-﻿using Auth.NET.Libs.Domain.Entities;
+﻿using Auth.NET.Libs.Domain.Auditing;
 
-namespace Auth.NET.Libs.Entities.Auditory;
+namespace Auth.NET.Libs.Entities.Auditing;
 
 /// <summary>
 /// Represents an audit log entry, used for tracking user actions and system events.

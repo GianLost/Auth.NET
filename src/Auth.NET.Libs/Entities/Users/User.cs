@@ -1,4 +1,4 @@
-﻿using Auth.NET.Libs.Domain.Entities;
+﻿using Auth.NET.Libs.Domain.Users;
 
 namespace Auth.NET.Libs.Entities.Users;
 

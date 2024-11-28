@@ -1,4 +1,6 @@
-﻿namespace Auth.NET.Libs.Domain.Entities;
+﻿using Auth.NET.Libs.Domain.Users;
+
+namespace Auth.NET.Libs.Domain.Auditing;
 
 /// <summary>
 /// Represents an audit log entry for tracking user actions and related metadata.

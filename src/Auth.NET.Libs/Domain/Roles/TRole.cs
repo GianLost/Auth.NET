@@ -1,4 +1,4 @@
-﻿namespace Auth.NET.Libs.Domain.Entities;
+﻿namespace Auth.NET.Libs.Domain.Roles;
 
 /// <summary>
 /// Represents a role entity that defines a set of permissions or responsibilities

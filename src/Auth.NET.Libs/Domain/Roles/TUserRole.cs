@@ -1,4 +1,6 @@
-﻿namespace Auth.NET.Libs.Domain.Entities;
+﻿using Auth.NET.Libs.Domain.Users;
+
+namespace Auth.NET.Libs.Domain.Roles;
 
 /// <summary>
 /// Represents a relationship between a user and a role in the system.
