@@ -19,34 +19,31 @@ public abstract class TUser<TKey> where TKey : IEquatable<TKey>
     /// Gets or sets the unique identifier for the user.
     /// </summary>
     [Key]
+    [Required]
     public virtual TKey Id { get; set; }
 
     /// <summary>
     /// Gets or sets the user's full name.
     /// </summary>
-    [Required]
-    [StringLength(100, MinimumLength = 5)]
+    [Required, StringLength(100, MinimumLength = 5)]
     public virtual string Name { get; set; }
 
     /// <summary>
     /// Gets or sets the user's login name.
     /// </summary>
-    [Required]
-    [StringLength(50, MinimumLength = 5)]
+    [Required, StringLength(50, MinimumLength = 5)]
     public virtual string Login { get; set; }
 
     /// <summary>
     /// Gets or sets the user's email address.
     /// </summary>
-    [Required]
-    [EmailAddress]
+    [Required, EmailAddress]
     public virtual string Email { get; set; }
 
     /// <summary>
     /// Gets or sets the user's cell phone number.
     /// </summary>
-    [Required]
-    [Phone]
+    [Required, Phone]
     public virtual string CellPhone { get; set; }
 
     /// <summary>
@@ -93,15 +90,15 @@ public abstract class TUser<TKey> where TKey : IEquatable<TKey>
     /// <summary>
     /// Gets or sets the collection of user roles associated with the user.
     /// </summary>
-    public ICollection<TUserRole<TKey>> UserRoles { get; set; } = [];
+    public virtual ICollection<TUserRole<TKey>> UserRoles { get; set; } = new HashSet<TUserRole<TKey>>();
 
     /// <summary>
     /// Gets or sets the collection of tokens issued to the user.
     /// </summary>
-    public ICollection<TToken<TKey>> Tokens { get; set; } = [];
+    public virtual ICollection<TToken<TKey>> Tokens { get; set; } = new HashSet<TToken<TKey>>();
 
     /// <summary>
     /// Gets or sets the collection of audit logs related to the user.
     /// </summary>
-    public ICollection<TAuditLog<TKey>> AuditLogs { get; set; } = [];
+    public virtual ICollection<TAuditLog<TKey>> AuditLogs { get; set; } = new HashSet<TAuditLog<TKey>>();
 }

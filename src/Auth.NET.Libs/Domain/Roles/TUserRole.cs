@@ -1,4 +1,6 @@
 ﻿using Auth.NET.Libs.Domain.Users;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Auth.NET.Libs.Domain.Roles;
 
@@ -8,23 +10,29 @@ namespace Auth.NET.Libs.Domain.Roles;
 /// <typeparam name="TKey">The type of the unique identifier for the user and role.</typeparam>
 public abstract class TUserRole<TKey> where TKey : IEquatable<TKey>
 {
+    [Key]
+    [Required]
+    public virtual TKey Id { get; set; }
+
     /// <summary>
     /// Gets or sets the unique identifier for the user.
     /// </summary>
-    public TKey UserId { get; set; }
+    [ForeignKey(nameof(User))]
+    public virtual TKey UserId { get; set; }
 
     /// <summary>
     /// Gets or sets the user associated with this user-role relationship.
     /// </summary>
-    public TUser<TKey> User { get; set; }
+    public virtual TUser<TKey> User { get; set; }
 
     /// <summary>
     /// Gets or sets the unique identifier for the role.
     /// </summary>
-    public TKey RoleId { get; set; }
+    [ForeignKey(nameof(Role))]
+    public virtual TKey RoleId { get; set; }
 
     /// <summary>
     /// Gets or sets the role associated with this user-role relationship.
     /// </summary>
-    public TRole<TKey> Role { get; set; }
+    public virtual TRole<TKey> Role { get; set; }
 }

@@ -1,4 +1,6 @@
 ﻿using Auth.NET.Libs.Domain.Users;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Auth.NET.Libs.Domain.Tokens;
 
@@ -11,27 +13,32 @@ public abstract class TToken<TKey> where TKey : IEquatable<TKey>
     /// <summary>
     /// Gets or sets the unique identifier for the token.
     /// </summary>
-    public TKey Id { get; set; }
+    [Key]
+    [Required]
+    public virtual TKey Id { get; set; }
 
     /// <summary>
     /// Gets or sets the unique identifier of the user associated with this token.
     /// </summary>
-    public TKey UserId { get; set; }
+    [ForeignKey(nameof(User))]
+    public virtual TKey UserId { get; set; }
 
     /// <summary>
     /// Gets or sets the user associated with this token.
     /// </summary>
-    public TUser<TKey> User { get; set; }
+    public virtual TUser<TKey> User { get; set; }
 
     /// <summary>
     /// Gets or sets the value of the token.
     /// </summary>
-    public string TokenValue { get; set; } = string.Empty;
+    [Required]
+    public virtual string TokenValue { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the expiration date and time of the token.
     /// </summary>
-    public DateTime Expiration { get; set; }
+    [Required]
+    public virtual DateTime Expiration { get; set; }
 
     /// <summary>
     /// Gets the date and time when the token was created.

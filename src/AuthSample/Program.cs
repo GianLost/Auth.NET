@@ -1,7 +1,20 @@
+using Auth.NET.Infrastructure.Data;
+using Auth.NET.Infrastructure.Services.Users;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+builder.Services.AddDbContext<AuthDbContext>(options =>
+{
+    options.UseSqlServer(connectionString, c => c.MigrationsAssembly("AuthSample"));
+});
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<UserService>();
 
 var app = builder.Build();
 
